@@ -1,0 +1,16 @@
+<div>
+  <h1> String Interpolation</h1>
+  <p> Dynamic Text Binding - {{name}} </p>
+  <p> Today {{today}} </p>
+  <p> Calculation {{1+2+3}} </p>
+  <p> Calculation Function {{fun(5,5)}} </p>
+  <p> i am {{user?.name}} my age is {{user?.age}} and gender is {{user?.gender}}</p>
+  
+  <h1> Property Binding</h1>
+  <p bind-innerText="message"></p>
+  <p [innerText]="message"></p>
+  <button class="btn btn-primary" disabled="{{allow}}"> Disabled True</button>
+  <button class="btn btn-primary" [disabled]="allow"> Disabled True</button>
+  <button class="btn btn-primary" [disabled]="!allow"> Disabled False</button>
+  <p> <img [src]="image" /> </p>
+</div>
