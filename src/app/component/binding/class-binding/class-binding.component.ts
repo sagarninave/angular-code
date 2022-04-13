@@ -12,8 +12,20 @@ export class ClassBindingComponent implements OnInit {
   ngOnInit() {
   }
 
-  secondStyle: string = "second";
-  thirdStyle: string = "third";
+  secondStyle: string = "second common";
+
+  thirdStyle: string = "third common";
+
+  fourthStyle: object = { "fourth common": true };
+
+  fifthStyle: boolean = true;
+
+  sixthStyle: string = "sixth common";
 
   primary: boolean = true;
+
+  conditionStyle1: string = "condition1 common";
+
+  conditionStyle2: string = "condition2 common";
+
 }

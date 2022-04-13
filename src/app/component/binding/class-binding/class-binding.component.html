@@ -1,0 +1,24 @@
+<div>
+  <h1> Class Binding</h1>
+  <p class="first common"> first comment</p>
+
+  <p [class]="secondStyle"> Second comment</p>
+
+  <p [className]="thirdStyle"> Third comment</p>
+
+  <p [ngClass]="fourthStyle"> Fourth comment</p>
+  
+  <p [class.fifth]="fifthStyle"> Fifth comment 1</p>
+
+  <p [class.fifth]="!fifthStyle"> Fifth comment 2</p>
+  
+  <p bind-class="sixthStyle"> Sixth comment</p>
+
+  <p [class]="primary ? conditionStyle1 : conditionStyle2"> TS variable conditional comment 1</p>
+
+  <p [class]="!primary ? conditionStyle1 : conditionStyle2"> Ts variable conditional comment 2</p>
+
+  <p [class]="primary ? 'condition1 common' : 'condition2 common'"> Direct classname conditional comment 1</p>
+
+  <p [class]="!primary ? 'condition1 common' : 'condition2 common'"> Direct classname conditional comment 2</p>
+</div>

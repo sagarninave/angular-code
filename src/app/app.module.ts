@@ -4,9 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BindingComponent } from './component/binding/binding.component';
-import { PropertyBindingComponent } from './component/property-binding/property-binding.component';
-import { TextBindingComponent } from './component/text-binding/text-binding.component';
-import { ClassBindingComponent } from './component/class-binding/class-binding.component';
+import { PropertyBindingComponent } from './component/binding/property-binding/property-binding.component';
+import { TextBindingComponent } from './component/binding/text-binding/text-binding.component';
+import { ClassBindingComponent } from './component/binding/class-binding/class-binding.component';
+import { StyleBindingComponent } from './component/binding/style-binding/style-binding.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ClassBindingComponent } from './component/class-binding/class-binding.c
     TextBindingComponent,
     PropertyBindingComponent,
     ClassBindingComponent,
+    StyleBindingComponent,
   ],
   imports: [
     BrowserModule,

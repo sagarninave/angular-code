@@ -1,0 +1,36 @@
+<div>
+
+  <h1>Style Binding</h1>
+
+  <p [style.color]="'red'">Red color 1</p>
+
+  <p [style.color]="redColor">Red color 2</p>
+
+  <p [style.font-weight]="'bold'" [style.color]="'blue'">Multiple Style 1</p>
+
+  <p [style.font-style]="italicFont" [style.color]="colorBlue">Multiple Style 2</p>
+
+  <p [style.font-size]="'2rem'">Font size 2rem</p>
+
+  <p [style.font-size]="'20px'">Font size 20px</p>
+
+  <p [style.font-size.rem]="'2'">Fot size type 2rem</p>
+
+  <p [style.font-size.px]="'20'">Fot size type 20px</p>
+
+  <p [style.color]="status ? 'magenta': 'aqua'"> Boolean conditional string color</p>
+  
+  <p [style.color]="!status ? 'magenta': 'aqua'"> Boolean onditional string color</p>
+
+  <p [style.color]="status ? conditionalVariableColor1: conditionalVariableColor2"> Boolean conditional variable color</p>
+  
+  <p [style.color]="!status ? conditionalVariableColor1: conditionalVariableColor2"> Boolean conditional variable color</p>
+
+  <p [style.color]="user.name === 'sagar' ? conditionalVariableColor3: conditionalVariableColor4"> Data conditional variable color</p>
+
+  <p [ngStyle]="styleObject1"> Style Object in normal way</p>
+
+  <p [ngStyle]="styleObject2"> Style Object in special way</p>
+
+  <p bind-ngStyle="ngStyleObject"> Bind ngStyle</p>
+</div>
