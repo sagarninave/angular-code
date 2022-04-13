@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BindingComponent } from './component/binding/binding.component';
 import { PropertyBindingComponent } from './component/property-binding/property-binding.component';
 import { TextBindingComponent } from './component/text-binding/text-binding.component';
+import { ClassBindingComponent } from './component/class-binding/class-binding.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { TextBindingComponent } from './component/text-binding/text-binding.comp
     BindingComponent,
     TextBindingComponent,
     PropertyBindingComponent,
+    ClassBindingComponent,
   ],
   imports: [
     BrowserModule,
