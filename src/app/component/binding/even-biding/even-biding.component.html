@@ -1,0 +1,81 @@
+<div>
+
+  <h1> Event Binding</h1>
+
+  <button class="d-block mb-3" (click)="today()"> Click Event </button>
+
+  <button class="d-block mb-3" (click)="myName1('Sagar Ninave')"> Param click Event </button>
+
+  <button class="d-block mb-3" (click)="toggleFullName('Sagar Ninave')"> Toggle {{fullname}} </button>
+
+  <button class="d-block mb-3" (click)="eventLog($event)"> Event log </button>
+
+  <input type="text" placeholder="Name" #username /> <button class="mb-3" (click)="myName2(username)">Submit</button>
+
+  <span class="d-block mb-3">
+    <input type="text" placeholder="Input Event" (input)="onInputEvent($event)"> {{inputEvent}}
+  </span>
+
+  <span class="d-block mb-3">
+    <input type="text" placeholder="Key Up Event" (keyup)="onUpKeyEvent($event)">
+    {{upKeyInput}}
+  </span>
+
+  <span class="d-block mb-3">
+    <input type="text" placeholder="Input Template Reference Event" #input1 (input)="0">
+    {{input1.value}}
+  </span>
+
+  <span class="d-block mb-3">
+    <input type="text" placeholder="Key Up Template Reference Event" #input2 (input)="0">
+    {{input2.value}}
+  </span>
+
+  <span class="d-block mb-3">
+    <input type="text" placeholder="Enter Template Reference Event" #input3 (keyup.enter)="onEnterEvent(input3.value)">
+    {{enterEvent}}
+  </span>
+
+  <span class="d-block mb-3">
+    <input type="text" placeholder="Shift Enter Event" (keyup.shift.enter)="onShiftEnterEvent($event)">
+    {{shiftEnterEvent}}
+  </span>
+
+  <span class="d-block mb-3">
+    <input type="text" placeholder="Control Enter Event" (keyup.control.enter)="onControlEnterEvent($event)">
+    {{controlEnterEvent}}
+
+  </span>
+
+  <span class="d-block mb-3">
+    <input type="text" placeholder="Shift Control Enter Event"
+      (keyup.control.shift.enter)="onControlShiftEnterEvent($event)">
+    {{controlShiftEnterEvent}}
+  </span>
+
+  <span class="d-block mb-3">
+    <input type="text" placeholder="Focus In/Out" #input4 (keyup.enter)="onFocusInOut(input4.value)"
+      (blur)="onFocusInOut(input4.value)"> <br />
+    {{focusInOut}}
+  </span>
+
+  <span class="d-block mb-3">
+    <select (change)="onMonthChange($event)">
+      <option *ngFor="let i of months">{{i}}</option>
+    </select>
+  </span>
+
+  <span class="d-block mb-3">
+    <input #todo (keyup.enter)="onAddToDo(todo.value)" (blur)="onAddToDo(todo.value); todo.value='' ">
+    <button (click)="onAddToDo(todo.value)">Add</button>
+    <button (click)="onRemoveToDo()">Remove</button>
+    <ul>
+      <li *ngFor="let todo of todos">{{todo}}</li>
+    </ul>
+  </span>
+
+  <span class="d-block mb-3">
+    <button (click)="onCounter()">Click Me {{counter}}</button> 
+  </span>
+
+</div>

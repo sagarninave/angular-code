@@ -8,6 +8,7 @@ import { PropertyBindingComponent } from './component/binding/property-binding/p
 import { TextBindingComponent } from './component/binding/text-binding/text-binding.component';
 import { ClassBindingComponent } from './component/binding/class-binding/class-binding.component';
 import { StyleBindingComponent } from './component/binding/style-binding/style-binding.component';
+import { EvenBidingComponent } from './component/binding/even-biding/even-biding.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { StyleBindingComponent } from './component/binding/style-binding/style-b
     PropertyBindingComponent,
     ClassBindingComponent,
     StyleBindingComponent,
+    EvenBidingComponent,
   ],
   imports: [
     BrowserModule,
