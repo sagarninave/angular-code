@@ -1,0 +1,17 @@
+<div>
+  <h1> Two Way Binding </h1>
+  
+  <span class="d-block mb-3">
+    <input type="text" placeholder="Two Way Binding" [(ngModel)]="twoWayBinding"> {{twoWayBinding}}
+  </span>
+
+  <span class="d-block mb-3">
+    <input type="text" placeholder="Two Way Binding Event Binding" [value]="username"
+      (input)="username = $event.target.value"> {{username}}
+  </span>
+
+  <span class="d-block mb-3">
+    <input type="text" placeholder="Two Way Binding Event Binding Using (ngModelChange)" [ngModel]="username1"
+      (ngModelChange)="username1 = $event"> {{username1}}
+  </span>
+</div>
