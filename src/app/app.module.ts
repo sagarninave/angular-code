@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -15,6 +14,11 @@ import { PipeComponent } from './component/pipe/pipe.component';
 import { SqrtPipe } from './component/pipe/sqrt.pipe';
 import { SquarePipe } from './component/pipe/square.pipe';
 import { CapitalizePipe } from './component/pipe/capitalize.pipe';
+import { DirectiveComponent } from './component/directive/directive.component';
+import { D1Directive } from './component/directive/d1.directive';
+import { RendererDirectiveDirective } from './component/directive/renderer-directive.directive';
+import { HostlistenerDirectiveDirective } from './component/directive/hostlistener-directive.directive';
+import { HostbinderDirectiveDirective } from './component/directive/hostbinder-directive.directive';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,11 @@ import { CapitalizePipe } from './component/pipe/capitalize.pipe';
     SqrtPipe,
     SquarePipe,
     CapitalizePipe,
+    DirectiveComponent,
+    D1Directive,
+    RendererDirectiveDirective,
+    HostlistenerDirectiveDirective,
+    HostbinderDirectiveDirective,
   ],
   imports: [
     BrowserModule,

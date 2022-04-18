@@ -1,0 +1,67 @@
+<div>
+
+  <h1> Structural Directives </h1>
+
+  <p *ngIf="isNgIf"><b>*ngIf - </b> Login</p>
+
+  <p *ngIf="isNgIfElse; else notAvailable"><b> *ngIf...else - </b> isNgIfElse True Block</p>
+  <ng-template #notAvailable> isNgIfElse false Block </ng-template>
+
+  <div *ngIf="!isNgIfElseThen; then thenBlock else elseBlock"></div>
+  <p>
+    <ng-template #thenBlock>
+      <b>*ngIf - *ngIf...then...else (for true)</b>
+      Content to render when condition is true.
+    </ng-template>
+    <ng-template #elseBlock>
+      <b>*ngIf - *ngIf...then...else (for true)</b>
+      Content to render when condition is false.
+    </ng-template>
+  </p>
+
+  <div>
+    <b>*ngFor</b>
+    <li *ngFor="let user of people">
+      {{user?.name}} is lives in {{user?.country}}
+    </li>
+  </div>
+
+  <div [ngSwitch]="ngSwitchValue">
+    <b>*ngSwitch</b>
+    <input type="text" [(ngModel)]="ngSwitchValue">
+    <p style='color:green' *ngSwitchCase="1">You have selected M S Dhoni</p>
+    <p style='color:pink' *ngSwitchCase="2">You have selected Sachin Tendulkar</p>
+    <p style='color:blue' *ngSwitchCase="3">You have selected Satyaprakash Samantaray</p>
+    <p style='color:red' *ngSwitchDefault>Sorry! Invalid selection....</p>
+  </div>
+
+  <h1> Attribute Directives </h1>
+  <span *ngFor="let person of people">
+    <li [ngStyle]="{'color':getColors(person.country)}"> {{ person.name }} ({{ person.country }})</li>
+  </span>
+
+  <br/>
+  <p [ngStyle]=" {'color': 'purple', 'font-size': '1rem', 'font-weight': 'bold', 'margin':'0'}">
+    This is p tag with color purple based by ngStyle inline object.
+  </p>
+
+  <br/>
+  <p [ngStyle]="styleObj">
+    This is p tag with color purple based by ngStyle .ts file object.
+  </p><br />
+
+  <h5> ngClass </h5>
+  <div ngClass='red fontWeight'>Red Text with Size 20px without []</div>
+  <div [ngClass]="'red fontWeight'">Red Text with Size 20px with []</div>
+  <div [ngClass]="['red', 'fontWeight']">Red Text with Size 20px using array</div>
+  <div [ngClass]="cssStringVarClass">Red Text with Size 20px : from component dynamic class from .ts </div>
+  <div [ngClass]="cssClassArray">Red Text with Size 20px : from CSS Array</div>
+  <div [ngClass]="{'red':true,'fontWeight':false}">Red Text with Size 20px with class object </div>
+  
+  <br />
+  <h1> Custom Directives </h1>
+  <p D1> Color custom directive</p>
+  <p Renderer> Renderer directive</p>
+  <p Hostlistener> Hostlistener directive</p>
+  <p Hostbinder> Hostbinder directive</p>
+</div>
