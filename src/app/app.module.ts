@@ -11,6 +11,10 @@ import { ClassBindingComponent } from './component/binding/class-binding/class-b
 import { StyleBindingComponent } from './component/binding/style-binding/style-binding.component';
 import { EvenBidingComponent } from './component/binding/even-biding/even-biding.component';
 import { TwoWayBindingComponent } from './component/binding/two-way-binding/two-way-binding.component';
+import { PipeComponent } from './component/pipe/pipe.component';
+import { SqrtPipe } from './component/pipe/sqrt.pipe';
+import { SquarePipe } from './component/pipe/square.pipe';
+import { CapitalizePipe } from './component/pipe/capitalize.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import { TwoWayBindingComponent } from './component/binding/two-way-binding/two-
     StyleBindingComponent,
     EvenBidingComponent,
     TwoWayBindingComponent,
+    PipeComponent,
+    SqrtPipe,
+    SquarePipe,
+    CapitalizePipe,
   ],
   imports: [
     BrowserModule,
