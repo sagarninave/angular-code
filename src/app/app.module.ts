@@ -19,6 +19,8 @@ import { D1Directive } from './component/directive/d1.directive';
 import { RendererDirectiveDirective } from './component/directive/renderer-directive.directive';
 import { HostlistenerDirectiveDirective } from './component/directive/hostlistener-directive.directive';
 import { HostbinderDirectiveDirective } from './component/directive/hostbinder-directive.directive';
+import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
+import { HeaderComponent } from './component/header/header.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { HostbinderDirectiveDirective } from './component/directive/hostbinder-d
     RendererDirectiveDirective,
     HostlistenerDirectiveDirective,
     HostbinderDirectiveDirective,
+    PageNotFoundComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
