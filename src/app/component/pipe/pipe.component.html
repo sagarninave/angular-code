@@ -1,0 +1,79 @@
+<div>
+
+  <h1> String Pipe </h1>
+  <p><b> Upper Case : </b> {{upperCaseString | uppercase}}</p>
+  <p><b> Lower Case : </b> {{lowerCaseString | lowercase}}</p>
+  <p><b> Lower Case Then Upper Case : </b> {{upperCaseString | lowercase | uppercase }}</p>
+  <p><b> Title Case : </b> {{titleCaseString | titlecase }}</p>
+
+  <h1> Date Pipe </h1>
+  <p> <b> By Default Date : </b> {{dateString | date}}</p>
+  <p> <b> y Format Date : </b> {{dateString | date: "d.MM.y" }}</p>
+  <p> <b> Short Date : </b> {{dateString | date:'short'}}</p>
+  <p> <b> Medium Date : </b> {{dateString | date:'medium'}}</p>
+  <p> <b> shortDate Date : </b> {{dateString | date:'shortDate'}}</p>
+  <p> <b> mediumDate Date : </b> {{dateString | date:'mediumDate'}}</p>
+  <p> <b> Long Date : </b> {{dateString | date:'longDate'}}</p>
+  <p> <b> Full Date : </b> {{dateString | date:'fullDate'}}</p>
+  <p> <b> Short Time : </b> {{dateString | date:'shortTime'}}</p>
+  <p> <b> Medium Time : </b> {{dateString | date:'mediumTime'}}</p>
+  <p> <b> yyyy Year Format : </b> {{dateString | date: "yyyy" }}</p>
+  <p> <b> yy Year Format : </b> {{dateString | date: "yy" }}</p>
+  <p> <b> y Year Format : </b> {{dateString | date: "y" }}</p>
+  <p> <b> MMMM Month Format : </b> {{dateString | date: "MMMM" }}</p>
+  <p> <b> MMM Month Format : </b> {{dateString | date: "MMM" }}</p>
+  <p> <b> MM Month Format : </b> {{dateString | date: "MM" }}</p>
+  <p> <b> M Month Format : </b> {{dateString | date: "M" }}</p>
+  <p> <b> dd Date Format : </b> {{dateString | date: "dd" }}</p>
+  <p> <b> d Date Format : </b> {{dateString | date: "d" }}</p>
+  <p> <b> HH Hour 24 Format : </b> {{dateString | date: "HH" }}</p>
+  <p> <b> H Hour 24 Format : </b> {{dateString | date: "H" }}</p>
+  <p> <b> EEEE Day Format : </b> {{dateString | date: "EEEE" }}</p>
+  <p> <b> EEE Day Format : </b> {{dateString | date: "EEE" }}</p>
+  <p> <b> hh Hour 12 Format : </b> {{dateString | date: "hh" }}</p>
+  <p> <b> h Hour 12 Format : </b> {{dateString | date: "h" }}</p>
+  <p> <b> mm Minute 12 Format : </b> {{dateString | date: "mm" }}</p>
+  <p> <b> h Minute 12 Format : </b> {{dateString | date: "m" }}</p>
+  <p> <b> ss Second 12 Format : </b> {{dateString | date: "ss" }}</p>
+  <p> <b> s Second 12 Format : </b> {{dateString | date: "s" }}</p>
+  <p> <b> sss Mille Second Format : </b> {{dateString | date: "sss" }}</p>
+  <p> <b> a am/pm Format : </b> {{dateString | date: "a" }}</p>
+  <p> <b> Z Time Zone Format : </b> {{dateString | date: "Z" }}</p>
+  <p> <b> ww Week Format : </b> {{dateString | date: "ww" }}</p>
+  <p> <b> w Week Format : </b> {{dateString | date: "w" }}</p>
+
+  <h1>Slice pipe </h1>
+  <p> <b> Slice 0 : </b> {{sliceString | slice:0}}</p>
+  <p> <b> Slice 1 : </b> {{sliceString | slice:1}}</p>
+  <p> <b> Slice 2 : </b> {{sliceString | slice:2}}</p>
+  <p> <b> Slice 3 : </b> {{sliceString | slice:3}}</p>
+  <p> <b> Slice 4 : </b> {{sliceString | slice:4}}</p>
+  <p> <b> Slice 5 : </b> {{sliceString | slice:5}}</p>
+
+  <h1> Json Pipe</h1>
+  <p> <b> Json Object Without Pipe : </b> {{json}}</p>
+  <p> <b> Json With Pipe : </b> {{json | json }}</p>
+
+  <h1> Number Pipe</h1>
+  <p> <b> By Default Number : </b> {{8.784256654 | number}} </p>
+  <p> <b> Number After Decimal Point: </b> {{8.784256654 | number:'1.1-2'}} </p>
+  <p> <b> Number After Decimal Point: </b> {{8.784256654 | number:'1.1-5'}} </p>
+  <p> <b> Number After Decimal Point: </b> {{8.784256654 | number:'3.1-5'}} </p>
+  <p> <b> Percent : </b> {{0.23|percent}} </p>
+  <p> <b> Percent : </b> {{23|percent}} </p>
+
+  <h1> Currency Pipe </h1>
+  <p> <b> By Default Currency : </b> {{0.23|currency}} </p>
+  <p> <b> Currency GBP : </b> {{10|currency:'GBP'}} </p>
+  <p> <b> Currency USD : </b> {{10|currency:'USD'}} </p>
+  <p> <b> Currency INR : </b> {{10|currency:'INR':"symbol-narrow"}} </p>
+
+  <h1> Custom Pipe </h1>
+  <p> <b> Square Root : </b> {{ 16 | SQRT }} </p>
+  <p> <b> Square : </b> {{ 5 | SQUARE }} </p>
+  <p> <b> Capitalize : </b> {{ "Sagar Ninave" | CAPITALIZE }} </p> 
+  
+  <h1> Type Cast Function </h1>
+  <p> data: {{$any(nullProperty)}} </p>
+
+</div>
