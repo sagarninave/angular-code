@@ -15,7 +15,7 @@ const route: Routes = [
     path: "binding",
     component: BindingComponent,
     children: [
-      { path: "", redirectTo: "/binding/text-binding", pathMatch: 'full' },
+      { path: "", redirectTo: "text-binding", pathMatch: 'full' },
       { path: "text-binding", component: TextBindingComponent },
       { path: "property-binding", component: PropertyBindingComponent },
       { path: "class-binding", component: ClassBindingComponent },
