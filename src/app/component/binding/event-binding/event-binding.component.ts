@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'EventBiding',
-  templateUrl: './even-biding.component.html',
-  styleUrls: ['./even-biding.component.scss']
+  templateUrl: './event-binding.component.html',
+  styleUrls: ['./event-binding.component.scss']
 })
 
-export class EvenBidingComponent implements OnInit {
+export class EventBindingComponent implements OnInit {
 
   constructor() { }
 

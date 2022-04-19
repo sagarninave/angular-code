@@ -8,7 +8,6 @@ import { PropertyBindingComponent } from './component/binding/property-binding/p
 import { TextBindingComponent } from './component/binding/text-binding/text-binding.component';
 import { ClassBindingComponent } from './component/binding/class-binding/class-binding.component';
 import { StyleBindingComponent } from './component/binding/style-binding/style-binding.component';
-import { EvenBidingComponent } from './component/binding/even-biding/even-biding.component';
 import { TwoWayBindingComponent } from './component/binding/two-way-binding/two-way-binding.component';
 import { PipeComponent } from './component/pipe/pipe.component';
 import { SqrtPipe } from './component/pipe/sqrt.pipe';
@@ -20,7 +19,9 @@ import { RendererDirectiveDirective } from './component/directive/renderer-direc
 import { HostlistenerDirectiveDirective } from './component/directive/hostlistener-directive.directive';
 import { HostbinderDirectiveDirective } from './component/directive/hostbinder-directive.directive';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
-import { HeaderComponent } from './component/header/header.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { EventBindingComponent } from './component/binding/event-binding/event-binding.component';
+import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { HeaderComponent } from './component/header/header.component';
     PropertyBindingComponent,
     ClassBindingComponent,
     StyleBindingComponent,
-    EvenBidingComponent,
+    EventBindingComponent,
     TwoWayBindingComponent,
     PipeComponent,
     SqrtPipe,
@@ -43,6 +44,7 @@ import { HeaderComponent } from './component/header/header.component';
     HostbinderDirectiveDirective,
     PageNotFoundComponent,
     HeaderComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,

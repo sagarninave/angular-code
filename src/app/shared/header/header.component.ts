@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import links from "../nav";
 @Component({
   selector: 'Header',
   templateUrl: './header.component.html',
@@ -9,12 +9,9 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  private navLink; 
+  
   ngOnInit() {
+    this.navLink = links;
   }
-
-  private links: Array<object> = [
-    { url: "/binding", title: "Binding" },
-    { url: "/pipes", title: "Pipes" },
-    { url: "/directives", title: "Directives" }
-  ];
 }
