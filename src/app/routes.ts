@@ -8,6 +8,7 @@ import { TextBindingComponent } from './component/binding/text-binding/text-bind
 import { DirectiveComponent } from './component/directive/directive.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { PipeComponent } from './component/pipe/pipe.component';
+import { ServiceComponent } from './component/service/service.component';
 
 const route: Routes = [
   { path: "", redirectTo: "binding", pathMatch: 'full' },
@@ -26,6 +27,7 @@ const route: Routes = [
   },
   { path: "pipes", component: PipeComponent },
   { path: "directives", component: DirectiveComponent },
+  { path: "services", component: ServiceComponent },
   { path: "**", component: PageNotFoundComponent }
 ];
 

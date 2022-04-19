@@ -22,7 +22,9 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 import { HeaderComponent } from './shared/header/header.component';
 import { EventBindingComponent } from './component/binding/event-binding/event-binding.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
-
+import { ServiceComponent } from './component/service/service.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './service/data.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,13 +47,15 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
     PageNotFoundComponent,
     HeaderComponent,
     NavBarComponent,
+    ServiceComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
