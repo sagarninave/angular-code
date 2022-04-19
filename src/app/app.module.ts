@@ -18,7 +18,7 @@ import { D1Directive } from './component/directive/d1.directive';
 import { RendererDirectiveDirective } from './component/directive/renderer-directive.directive';
 import { HostlistenerDirectiveDirective } from './component/directive/hostlistener-directive.directive';
 import { HostbinderDirectiveDirective } from './component/directive/hostbinder-directive.directive';
-import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { EventBindingComponent } from './component/binding/event-binding/event-binding.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';

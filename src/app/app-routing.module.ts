@@ -7,7 +7,7 @@ import { PropertyBindingComponent } from './component/binding/property-binding/p
 import { StyleBindingComponent } from './component/binding/style-binding/style-binding.component';
 import { TextBindingComponent } from './component/binding/text-binding/text-binding.component';
 import { DirectiveComponent } from './component/directive/directive.component';
-import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { PipeComponent } from './component/pipe/pipe.component';
 
 const routes: Routes = [
