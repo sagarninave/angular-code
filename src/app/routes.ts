@@ -9,6 +9,7 @@ import { DirectiveComponent } from './component/directive/directive.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { PipeComponent } from './component/pipe/pipe.component';
 import { ServiceComponent } from './component/service/service.component';
+import { TwoWayBindingComponent } from './component/binding/two-way-binding/two-way-binding.component';
 
 const route: Routes = [
   { path: "", redirectTo: "binding", pathMatch: 'full' },
@@ -22,7 +23,7 @@ const route: Routes = [
       { path: "class-binding", component: ClassBindingComponent },
       { path: "style-binding", component: StyleBindingComponent },
       { path: "event-binding", component: EventBindingComponent },
-      { path: "two-way-binding", component: TextBindingComponent },
+      { path: "two-way-binding", component: TwoWayBindingComponent },
     ]
   },
   { path: "pipes", component: PipeComponent },
