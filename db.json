@@ -30,5 +30,44 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "users": [
+    {
+      "id": "a77febe2-141b-4ae6-869e-239d83af2065",
+      "first_name": "sagar",
+      "last_name": "ninave",
+      "email": "sagarninave@gmail.com",
+      "mobile": "9657445206",
+      "date_of_birth": "08/06/1996",
+      "gender": "male",
+      "nationality": "indian",
+      "address": "bd85046a-8806-4df7-baaa-819a7f5a3ff2"
+    },
+    {
+      "id": "cc87c233-723d-4b9a-9e56-cbe308442228",
+      "first_name": "sanket",
+      "last_name": "wankhede",
+      "email": "sanketwankhede@gmail.com",
+      "mobile": "9647898742",
+      "date_of_birth": "012/03/1995",
+      "gender": "male",
+      "nationality": "indian",
+      "address": ""
+    }
+  ],
+  "user_address": [
+    {
+      "id": "bd85046a-8806-4df7-baaa-819a7f5a3ff2",
+      "first_line": "timki, rambhaji road",
+      "second_line": "near nakaloba temple",
+      "landmark": "nakaloba temple",
+      "city": "nagpur",
+      "district": "nagpur",
+      "state": "maharashtra",
+      "country": "india",
+      "pin_code": "440018"
+    }
+  ]
+
+
 }

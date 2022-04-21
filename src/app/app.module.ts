@@ -24,7 +24,7 @@ import { EventBindingComponent } from './component/binding/event-binding/event-b
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { ServiceComponent } from './component/service/service.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DataService } from './service/data.service';
+import { UserService } from './service/user.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +55,7 @@ import { DataService } from './service/data.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [DataService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
