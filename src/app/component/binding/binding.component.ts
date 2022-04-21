@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import links from "../../shared/nav";
+import links from "../../constants/nav";
 @Component({
   selector: 'Binding',
   templateUrl: './binding.component.html',

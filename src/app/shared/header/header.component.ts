@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import links from "../nav";
+import links from "../../constants/nav";
 @Component({
   selector: 'Header',
   templateUrl: './header.component.html',

@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { DataService } from "../../service/data.service";
-
 @Component({
-  selector: 'app-service',
-  templateUrl: './service.component.html',
-  styleUrls: ['./service.component.scss']
+  selector: "app-service",
+  templateUrl: "./service.component.html",
+  styleUrls: ["./service.component.scss"],
 })
 export class ServiceComponent implements OnInit {
-
-  constructor(private data: DataService) { }
+  constructor(private data: DataService) {}
 
   ngOnInit(): void {
-    this.data.getUserData().subscribe(result => console.log(result));
+    this.data.getUserData().subscribe((result) => console.log(result));
   }
-
 }
