@@ -15,14 +15,14 @@
   <tbody>
     <tr *ngFor="let user of users let i = index">
       <th scope="row">{{i+1}}</th>
-      <td>{{user.first_name}}</td>
-      <td>{{user.last_name}}</td>
-      <td>{{user.email}}</td>
-      <td>{{user.mobile}}</td>
-      <td>{{user.date_of_birth}}</td>
-      <td>{{user.gender}}</td>
-      <td>{{user.nationality}}</td>
-      <td>{{user.address}}</td>
+      <td>{{user?.first_name}}</td>
+      <td>{{user?.last_name}}</td>
+      <td>{{user?.email}}</td>
+      <td>{{user?.mobile}}</td>
+      <td>{{user?.date_of_birth}}</td>
+      <td>{{user?.gender}}</td>
+      <td>{{user?.nationality}}</td>
+      <td>{{userAddress(user?.address)}}</td>
     </tr>
   </tbody>
-</table>
+</table>.

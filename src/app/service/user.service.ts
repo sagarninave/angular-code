@@ -12,5 +12,10 @@ export class UserService {
   getUsers(): Observable<any> {
     return this.api.get(apiconstants.baseUrl + apiconstants.getAllUsers);
   }
-  
+
+  getUserAddress(id): Observable<any> {
+    return this.api.get(
+      `${apiconstants.baseUrl}${apiconstants.getUserAddress}/${id}`
+    );
+  }
 }
