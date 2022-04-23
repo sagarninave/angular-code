@@ -26,6 +26,8 @@ import { ServiceComponent } from './component/service/service.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user.service';
 import { UserComponent } from './component/service/user/user.component';
+import { SignupComponent } from './component/signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,12 +52,14 @@ import { UserComponent } from './component/service/user/user.component';
     NavBarComponent,
     ServiceComponent,
     UserComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
