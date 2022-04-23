@@ -7,8 +7,6 @@ import { apiconstants } from "src/app/constants/apiconstants";
   providedIn: "root",
 })
 export class UserService {
-  constructor(private api: HttpClient) {}
-
   getUsers(): Observable<any> {
     return this.api.get(apiconstants.baseUrl + apiconstants.getAllUsers);
   }
@@ -18,4 +16,12 @@ export class UserService {
       `${apiconstants.baseUrl}${apiconstants.getUserAddress}/${id}`
     );
   }
+
+  getUser(id): Observable<any> {
+    return this.api.get(
+      `${apiconstants.baseUrl}${apiconstants.getAllUsers}/${id}`
+    );
+  }
+
+  constructor(private api: HttpClient) {}
 }

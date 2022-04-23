@@ -9,7 +9,7 @@ export class BindingComponent implements OnInit {
 
   constructor() { }
 
-  private navLinks;
+  navLinks:any;
 
   ngOnInit() {
     this.navLinks = links.filter(i => i.title === "Binding" && i.children)[0].children;

@@ -25,6 +25,7 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { ServiceComponent } from './component/service/service.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user.service';
+import { UserComponent } from './component/service/user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +49,7 @@ import { UserService } from './service/user.service';
     HeaderComponent,
     NavBarComponent,
     ServiceComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
