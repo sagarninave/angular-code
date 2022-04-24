@@ -11,7 +11,9 @@ import { PipeComponent } from "./component/pipe/pipe.component";
 import { ServiceComponent } from "./component/service/service.component";
 import { TwoWayBindingComponent } from "./component/binding/two-way-binding/two-way-binding.component";
 import { UserComponent } from "./component/service/user/user.component";
-import { FormsComponent } from './component/forms/forms.component';
+import { FormsComponent } from "./component/forms/forms.component";
+import { ReactiveFormGroupComponent } from "./component/forms/reactive-form-group/reactive-form-group.component";
+import { ReactiveNestedFormGroupComponent } from "./component/forms/reactive-nested-form-group/reactive-nested-form-group.component";
 
 const route: Routes = [
   { path: "", redirectTo: "binding", pathMatch: "full" },
@@ -32,7 +34,16 @@ const route: Routes = [
   { path: "directives", component: DirectiveComponent },
   { path: "services", component: ServiceComponent },
   { path: "user/:id", component: UserComponent },
-  { path: "forms", component: FormsComponent },
+  {
+    path: "forms",
+    component: FormsComponent,
+    children: [
+      { path: "", redirectTo: "reactive-form-group", pathMatch: "full" },
+      { path: "reactive-form-group", component: ReactiveFormGroupComponent },
+      { path: "reactive-nested-form-group", component: ReactiveNestedFormGroupComponent },
+      { path: "reactive-form-builder", component: ReactiveFormGroupComponent },
+    ],
+  },
   { path: "**", component: PageNotFoundComponent },
 ];
 
