@@ -27,13 +27,6 @@
         <input type="date" class="formControl date" formControlName="date_of_birth" placeholder="Date of Birth" />
       </div>
 
-      <div class="col-xs-12">
-        <select class="form-select" aria-label="Default select example" formControlName="nationality">
-          <option value=""> Select Country </option>
-          <option *ngFor="let country of countries" [value]="country.label">{{country.label}}</option>
-        </select>
-      </div>
-
       <div class="col-xs-12 mt-2 mb-2">
         Gender
         <input class="form-check-input" type="radio" value="male" formControlName="gender" id="flexRadioDefault1">
@@ -44,6 +37,18 @@
         <label class="form-check-label" for="flexRadioDefault2">
           Female
         </label>
+      </div>
+
+      <div class="col-xs-12" formGroupName="address">
+        Address
+        <input type="text" class="formControl" formControlName="first_line" placeholder="First Line" />
+        <input type="text" class="formControl" formControlName="second_line" placeholder="Second Line" />
+        <input type="text" class="formControl" formControlName="landmark" placeholder="Landmark" />
+        <input type="text" class="formControl" formControlName="city" placeholder="City" />
+        <input type="text" class="formControl" formControlName="district" placeholder="District" />
+        <input type="text" class="formControl" formControlName="state" placeholder="State" />
+        <input type="text" class="formControl" formControlName="country" placeholder="Country" />
+        <input type="text" class="formControl" formControlName="pin_code" placeholder="Pin Code" />
       </div>
 
       <div class="col-xs-12">

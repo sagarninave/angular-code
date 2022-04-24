@@ -19,7 +19,16 @@ export class SignupComponent implements OnInit {
       password: new FormControl(),
       date_of_birth: new FormControl(),
       gender: new FormControl(),
-      nationality: new FormControl(),
+      address: new FormGroup({
+        first_line: new FormControl(),
+        second_line: new FormControl(),
+        landmark: new FormControl(),
+        city: new FormControl(),
+        district: new FormControl(),
+        state: new FormControl(),
+        country: new FormControl(),
+        pin_code: new FormControl()
+      }),
     });
   }
 
@@ -54,6 +63,7 @@ export class SignupComponent implements OnInit {
       this.signup.controls.first_name.valid
     );
     console.groupEnd();
+    alert(JSON.stringify(this.signup.value))
   }
 
   constructor() {}
