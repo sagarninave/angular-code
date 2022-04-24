@@ -2,11 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 import { country } from "src/app/constants/country";
 @Component({
-  selector: "app-signup",
-  templateUrl: "./signup.component.html",
-  styleUrls: ["./signup.component.scss"],
+  selector: "app-forms",
+  templateUrl: "./forms.component.html",
+  styleUrls: ["./forms.component.scss"],
 })
-export class SignupComponent implements OnInit {
+export class FormsComponent implements OnInit {
   signup: FormGroup;
   countries: any;
 

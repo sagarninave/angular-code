@@ -26,7 +26,7 @@ import { ServiceComponent } from './component/service/service.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user.service';
 import { UserComponent } from './component/service/user/user.component';
-import { SignupComponent } from './component/signup/signup.component';
+import { FormsComponent } from './component/forms/forms.component';
 import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -52,7 +52,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavBarComponent,
     ServiceComponent,
     UserComponent,
-    SignupComponent,
+    FormsComponent,
   ],
   imports: [
     BrowserModule,

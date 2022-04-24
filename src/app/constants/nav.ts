@@ -14,7 +14,7 @@ const links = [
   { url: "/pipes", title: "Pipes" },
   { url: "/directives", title: "Directives" },
   { url: "/services", title: "Services" },
-  { url: "/signup", title: "Signup" }
+  { url: "/forms", title: "Forms" }
 ];
 
 export default links;

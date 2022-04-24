@@ -11,7 +11,7 @@ import { PipeComponent } from "./component/pipe/pipe.component";
 import { ServiceComponent } from "./component/service/service.component";
 import { TwoWayBindingComponent } from "./component/binding/two-way-binding/two-way-binding.component";
 import { UserComponent } from "./component/service/user/user.component";
-import { SignupComponent } from './component/signup/signup.component';
+import { FormsComponent } from './component/forms/forms.component';
 
 const route: Routes = [
   { path: "", redirectTo: "binding", pathMatch: "full" },
@@ -32,7 +32,7 @@ const route: Routes = [
   { path: "directives", component: DirectiveComponent },
   { path: "services", component: ServiceComponent },
   { path: "user/:id", component: UserComponent },
-  { path: "signup", component: SignupComponent },
+  { path: "forms", component: FormsComponent },
   { path: "**", component: PageNotFoundComponent },
 ];
 
