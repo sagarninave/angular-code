@@ -1,24 +1,23 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormGroup, FormControl, FormBuilder } from "@angular/forms";
 
 @Component({
-  selector: 'app-reactive-form-group',
-  templateUrl: './reactive-form-group.component.html',
-  styleUrls: ['./reactive-form-group.component.scss']
+  selector: "app-reactive-form-builder",
+  templateUrl: "./reactive-form-builder.component.html",
+  styleUrls: ["./reactive-form-builder.component.scss"],
 })
-export class ReactiveFormGroupComponent implements OnInit {
-
+export class ReactiveFormBuilderComponent implements OnInit {
   signup: FormGroup;
 
   createForm(): void {
-    this.signup = new FormGroup({
-      first_name: new FormControl(),
-      last_name: new FormControl(),
-      email: new FormControl(),
-      mobile: new FormControl(),
-      password: new FormControl(),
-      date_of_birth: new FormControl(),
-      gender: new FormControl(),
+    this.signup = this.FB.group({
+      first_name: [""],
+      last_name: [""],
+      email: [""],
+      mobile: [""],
+      password: [""],
+      date_of_birth: [""],
+      gender: [""],
     });
   }
 
@@ -53,10 +52,10 @@ export class ReactiveFormGroupComponent implements OnInit {
       this.signup.controls.first_name.valid
     );
     console.groupEnd();
-    alert(JSON.stringify(this.signup.value))
+    alert(JSON.stringify(this.signup.value));
   }
 
-  constructor() {}
+  constructor(private FB: FormBuilder) {}
 
   ngOnInit() {
     this.createForm();

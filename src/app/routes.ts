@@ -14,6 +14,7 @@ import { UserComponent } from "./component/service/user/user.component";
 import { FormsComponent } from "./component/forms/forms.component";
 import { ReactiveFormGroupComponent } from "./component/forms/reactive-form-group/reactive-form-group.component";
 import { ReactiveNestedFormGroupComponent } from "./component/forms/reactive-nested-form-group/reactive-nested-form-group.component";
+import { ReactiveFormBuilderComponent } from "./component/forms/reactive-form-builder/reactive-form-builder.component";
 
 const route: Routes = [
   { path: "", redirectTo: "binding", pathMatch: "full" },
@@ -41,7 +42,7 @@ const route: Routes = [
       { path: "", redirectTo: "reactive-form-group", pathMatch: "full" },
       { path: "reactive-form-group", component: ReactiveFormGroupComponent },
       { path: "reactive-nested-form-group", component: ReactiveNestedFormGroupComponent },
-      { path: "reactive-form-builder", component: ReactiveFormGroupComponent },
+      { path: "reactive-form-builder", component: ReactiveFormBuilderComponent },
     ],
   },
   { path: "**", component: PageNotFoundComponent },

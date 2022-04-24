@@ -30,6 +30,8 @@ import { FormsComponent } from './component/forms/forms.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormGroupComponent } from './component/forms/reactive-form-group/reactive-form-group.component';
 import { ReactiveNestedFormGroupComponent } from './component/forms/reactive-nested-form-group/reactive-nested-form-group.component';
+import { ReactiveFormBuilderComponent } from './component/forms/reactive-form-builder/reactive-form-builder.component';
+import { ReactiveNestedFormBuilderComponent } from './component/forms/reactive-nested-form-builder/reactive-nested-form-builder.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +59,8 @@ import { ReactiveNestedFormGroupComponent } from './component/forms/reactive-nes
     FormsComponent,
     ReactiveFormGroupComponent,
     ReactiveNestedFormGroupComponent,
+    ReactiveFormBuilderComponent,
+    ReactiveNestedFormBuilderComponent,
   ],
   imports: [
     BrowserModule,
