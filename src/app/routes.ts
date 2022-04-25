@@ -16,6 +16,7 @@ import { ReactiveFormGroupComponent } from "./component/forms/reactive-form-grou
 import { ReactiveNestedFormGroupComponent } from "./component/forms/reactive-nested-form-group/reactive-nested-form-group.component";
 import { ReactiveFormBuilderComponent } from "./component/forms/reactive-form-builder/reactive-form-builder.component";
 import { ReactiveNestedFormBuilderComponent } from "./component/forms/reactive-nested-form-builder/reactive-nested-form-builder.component";
+import { ReactiveFormBuilderValidationComponent } from "./component/forms/reactive-form-builder-validation/reactive-form-builder-validation.component";
 
 const route: Routes = [
   { path: "", redirectTo: "binding", pathMatch: "full" },
@@ -30,7 +31,7 @@ const route: Routes = [
       { path: "style-binding", component: StyleBindingComponent },
       { path: "event-binding", component: EventBindingComponent },
       { path: "two-way-binding", component: TwoWayBindingComponent },
-    ],
+    ]
   },
   { path: "pipes", component: PipeComponent },
   { path: "directives", component: DirectiveComponent },
@@ -45,9 +46,10 @@ const route: Routes = [
       { path: "reactive-nested-form-group", component: ReactiveNestedFormGroupComponent },
       { path: "reactive-form-builder", component: ReactiveFormBuilderComponent },
       { path: "reactive-nested-form-builder", component: ReactiveNestedFormBuilderComponent },
-    ],
+      { path: "reactive-form-builder-validation", component: ReactiveFormBuilderValidationComponent },
+    ]
   },
-  { path: "**", component: PageNotFoundComponent },
+  { path: "**", component: PageNotFoundComponent }
 ];
 
 export default route;

@@ -32,6 +32,7 @@ import { ReactiveFormGroupComponent } from './component/forms/reactive-form-grou
 import { ReactiveNestedFormGroupComponent } from './component/forms/reactive-nested-form-group/reactive-nested-form-group.component';
 import { ReactiveFormBuilderComponent } from './component/forms/reactive-form-builder/reactive-form-builder.component';
 import { ReactiveNestedFormBuilderComponent } from './component/forms/reactive-nested-form-builder/reactive-nested-form-builder.component';
+import { ReactiveFormBuilderValidationComponent } from './component/forms/reactive-form-builder-validation/reactive-form-builder-validation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +62,7 @@ import { ReactiveNestedFormBuilderComponent } from './component/forms/reactive-n
     ReactiveNestedFormGroupComponent,
     ReactiveFormBuilderComponent,
     ReactiveNestedFormBuilderComponent,
+    ReactiveFormBuilderValidationComponent,
   ],
   imports: [
     BrowserModule,

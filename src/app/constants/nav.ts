@@ -22,6 +22,7 @@ const links = [
       { url: "/forms/reactive-nested-form-group", title: "Reactive Nested Form Group" },
       { url: "/forms/reactive-form-builder", title: "Reactive Form Builder" },
       { url: "/forms/reactive-nested-form-builder", title: "Reactive Nested Form Builder" },
+      { url: "/forms/reactive-form-builder-validation", title: "Reactive Form Builder Validation" },
     ],
   },
 ];
