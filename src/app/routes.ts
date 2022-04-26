@@ -18,6 +18,7 @@ import { ReactiveFormBuilderComponent } from "./component/forms/reactive-form-bu
 import { ReactiveNestedFormBuilderComponent } from "./component/forms/reactive-nested-form-builder/reactive-nested-form-builder.component";
 import { ReactiveFormBuilderValidationComponent } from "./component/forms/reactive-form-builder-validation/reactive-form-builder-validation.component";
 import { ReactiveFormGroupPopulateValuesComponent } from './component/forms/reactive-form-group-populate-values/reactive-form-group-populate-values.component';
+import { ComponentInteractionComponent } from './component/component-interaction/component-interaction.component';
 
 const route: Routes = [
   { path: "", redirectTo: "binding", pathMatch: "full" },
@@ -49,8 +50,9 @@ const route: Routes = [
       { path: "reactive-form-builder", component: ReactiveFormBuilderComponent },
       { path: "reactive-nested-form-builder", component: ReactiveNestedFormBuilderComponent },
       { path: "reactive-form-builder-validation", component: ReactiveFormBuilderValidationComponent },
-    ]
+    ],
   },
+  { path: "component-interaction", component: ComponentInteractionComponent },
   { path: "**", component: PageNotFoundComponent }
 ];
 

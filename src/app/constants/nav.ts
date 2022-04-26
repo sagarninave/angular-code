@@ -26,6 +26,9 @@ const links = [
       { url: "/forms/reactive-form-builder-validation", title: "Reactive Form Builder Validation" },
     ],
   },
+  { url: "/component-interaction", title: "Component Interaction" },
+
+  
 ];
 
 export default links;
