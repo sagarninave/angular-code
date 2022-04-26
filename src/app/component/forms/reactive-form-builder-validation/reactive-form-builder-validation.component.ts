@@ -19,6 +19,16 @@ export class ReactiveFormBuilderValidationComponent implements OnInit {
       password: [""],
       date_of_birth: [""],
       gender: [""],
+      address: this.FB.group({
+        first_line: [""],
+        second_line: [""],
+        landmark: [""],
+        city: [""],
+        district: [""],
+        state: [""],
+        country: [""],
+        pin_code: [""],
+      }),
     });
   }
 
