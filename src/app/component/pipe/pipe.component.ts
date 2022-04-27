@@ -1,33 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'Pipe',
-  templateUrl: './pipe.component.html',
-  styleUrls: ['./pipe.component.scss']
+  selector: "Pipe",
+  templateUrl: "./pipe.component.html",
+  styleUrls: ["./pipe.component.scss"],
 })
 export class PipeComponent implements OnInit {
+ 
+  upperCaseString: string = "sagar ninave";
 
-  constructor() { }
+  lowerCaseString: string = "SAGAR NINAVE";
 
-  ngOnInit() {
-  }
+  titleCaseString: string = "sagar ninave";
 
+  dateString: string = "12/9/2019";
 
-  private upperCaseString: string = "sagar ninave";
+  sliceString: string = "Hello Good Morning!";
 
-  private lowerCaseString: string = "SAGAR NINAVE";
+  nullProperty: string = "sagar";
 
-  private titleCaseString: string = "sagar ninave";
+  json: object = {
+    city: "Jaipur",
+    country: "India",
+  };
 
-  private dateString: string = "12/9/2019";
+  constructor() {}
 
-  private sliceString: string = "Hello Good Morning!";
-
-  private nullProperty: string = "sagar";
-
-  public json = {
-    "city": "Jaipur",
-    "country": "India"
-  }
-
+  ngOnInit() {}
 }

@@ -1,3 +1,24 @@
 <div>
   <h1> Parent Component </h1>
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Employee First Name</th>
+        <th scope="col">Employee Last Name</th>
+        <th scope="col">Employee Email</th>
+        <th scope="col">Employee Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{dataFromChild?.employee_id}}</th>
+        <td>{{dataFromChild?.employee_first_name}}</td>
+        <td>{{dataFromChild?.employee_last_name}}</td>
+        <td>{{dataFromChild?.employee_email}}</td>
+        <td>{{dataFromChild?.employee_mobile}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <app-child-component [parentValue]="parentValue" (dataToParent)="getDataFromChild($event)"></app-child-component>
 </div>

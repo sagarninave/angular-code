@@ -32,7 +32,7 @@ const route: Routes = [
       { path: "class-binding", component: ClassBindingComponent },
       { path: "style-binding", component: StyleBindingComponent },
       { path: "event-binding", component: EventBindingComponent },
-      { path: "two-way-binding", component: TwoWayBindingComponent },
+      { path: "two-way-binding", component: TwoWayBindingComponent }
     ]
   },
   { path: "pipes", component: PipeComponent },
@@ -50,7 +50,7 @@ const route: Routes = [
       { path: "reactive-form-builder", component: ReactiveFormBuilderComponent },
       { path: "reactive-nested-form-builder", component: ReactiveNestedFormBuilderComponent },
       { path: "reactive-form-builder-validation", component: ReactiveFormBuilderValidationComponent },
-    ],
+    ]
   },
   { path: "component-interaction", component: ComponentInteractionComponent },
   { path: "**", component: PageNotFoundComponent }

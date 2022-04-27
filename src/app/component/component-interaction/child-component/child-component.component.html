@@ -1,1 +1,26 @@
-<p>child-component works!</p>
+<div>
+  <h1> Child Component </h1>
+
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{parentValue?.id}}</th>
+        <td>{{parentValue?.first_name}}</td>
+        <td>{{parentValue?.last_name}}</td>
+        <td>{{parentValue?.email}}</td>
+        <td>{{parentValue?.mobile}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="sendDataToParent()"> Send data to parent</button>
+</div>
