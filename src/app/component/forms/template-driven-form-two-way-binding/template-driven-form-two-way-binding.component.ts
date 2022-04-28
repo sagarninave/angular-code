@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateDrivenFormTwoWayBindingComponent implements OnInit {
 
+  user:object ={
+    first_name:"",
+    last_name:"",
+    email:"",
+    mobile:"",
+    password:"",
+    date_of_birth:"",
+    gender:"",
+  } 
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit(): void {
+    console.log(this.user);
+  }
 }

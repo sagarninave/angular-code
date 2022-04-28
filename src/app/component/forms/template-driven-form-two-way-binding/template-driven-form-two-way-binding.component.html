@@ -1,1 +1,98 @@
-<p>template-driven-form-two-way-binding works!</p>
+<div class="container">
+  <form #signupForm="ngForm">
+    <div class="row form-wrapper">
+      <h3>Signup</h3>
+      <div class="col-xs-12">
+        <input
+          type="text"
+          class="formControl"
+          [(ngModel)]="user.first_name"
+          name="first_name"
+          placeholder="First Name"
+        />
+      </div>
+
+      <div class="col-xs-12">
+        <input
+          type="text"
+          class="formControl"
+          [(ngModel)]="user.last_name"
+          name="last_name"
+          placeholder="last Name"
+        />
+      </div>
+
+      <div class="col-xs-12">
+        <input
+          type="email"
+          class="formControl"
+          [(ngModel)]="user.email"
+          name="email"
+          placeholder="Email"
+        />
+      </div>
+
+      <div class="col-xs-12">
+        <input
+          type="text"
+          class="formControl"
+          [(ngModel)]="user.mobile"
+          name="mobile"
+          placeholder="Mobile"
+        />
+      </div>
+
+      <div class="col-xs-12">
+        <input
+          type="password"
+          class="formControl"
+          [(ngModel)]="user.password"
+          name="password"
+          placeholder="Password"
+        />
+      </div>
+
+      <div class="col-xs-12">
+        <input
+          type="date"
+          class="formControl date"
+          [(ngModel)]="user.date_of_birth"
+          name="date_of_birth"
+          placeholder="Date of Birth"
+        />
+      </div>
+
+      <div class="col-xs-12 mt-2 mb-2">
+        Gender
+        <input
+          class="form-check-input"
+          type="radio"
+          value="male"
+          [(ngModel)]="user.gender"
+          name="gender"
+          id="flexRadioDefault1"
+        />
+        <label class="form-check-label" for="flexRadioDefault1"> Male </label>
+        <input
+          class="form-check-input"
+          type="radio"
+          value="female"
+          [(ngModel)]="user.gender"
+          name="gender"
+          id="flexRadioDefault2"
+        />
+        <label class="form-check-label" for="flexRadioDefault2"> Female </label>
+      </div>
+
+      <div class="col-xs-12">
+        <button
+          class="formControl submit"
+          [disabled]="!signupForm.valid"
+          (click)="onSubmit()"
+        >
+          Signup
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
