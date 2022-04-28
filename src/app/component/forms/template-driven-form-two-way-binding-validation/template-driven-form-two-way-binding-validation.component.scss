@@ -1,0 +1,24 @@
+.form-wrapper {
+  border: 1px solid #767676;
+  width: min-content;
+  margin: auto;
+  padding: 0.5rem 1rem 2rem;
+  border-radius: 5px;
+}
+
+h3 {
+  margin: 0.5rem;
+}
+
+.formControl{
+  margin-bottom: 0.5rem;
+  padding:8px;
+  font-size: 14px;
+}
+.submit, .date{
+  width: 100%;
+}
+
+.border-red{
+  border:1px solid red
+}

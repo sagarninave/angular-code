@@ -38,6 +38,7 @@ import { ComponentInteractionComponent } from './component/component-interaction
 import { ChildComponentComponent } from './component/component-interaction/child-component/child-component.component';
 import { TemplateDrivenFormComponent } from './component/forms/template-driven-form/template-driven-form.component';
 import { TemplateDrivenFormTwoWayBindingComponent } from './component/forms/template-driven-form-two-way-binding/template-driven-form-two-way-binding.component';
+import { TemplateDrivenFormTwoWayBindingValidationComponent } from './component/forms/template-driven-form-two-way-binding-validation/template-driven-form-two-way-binding-validation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +74,7 @@ import { TemplateDrivenFormTwoWayBindingComponent } from './component/forms/temp
     ChildComponentComponent,
     TemplateDrivenFormComponent,
     TemplateDrivenFormTwoWayBindingComponent,
+    TemplateDrivenFormTwoWayBindingValidationComponent,
   ],
   imports: [
     BrowserModule,

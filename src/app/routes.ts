@@ -21,6 +21,7 @@ import { ReactiveFormGroupPopulateValuesComponent } from './component/forms/reac
 import { ComponentInteractionComponent } from './component/component-interaction/component-interaction.component';
 import { TemplateDrivenFormComponent } from './component/forms/template-driven-form/template-driven-form.component';
 import { TemplateDrivenFormTwoWayBindingComponent } from './component/forms/template-driven-form-two-way-binding/template-driven-form-two-way-binding.component';
+import { TemplateDrivenFormTwoWayBindingValidationComponent } from "./component/forms/template-driven-form-two-way-binding-validation/template-driven-form-two-way-binding-validation.component";
 
 const route: Routes = [
   { path: "", redirectTo: "binding", pathMatch: "full" },
@@ -53,7 +54,8 @@ const route: Routes = [
       { path: "reactive-nested-form-builder", component: ReactiveNestedFormBuilderComponent },
       { path: "reactive-form-builder-validation", component: ReactiveFormBuilderValidationComponent },
       { path: "template-driven-form", component: TemplateDrivenFormComponent },
-      { path: "template-driven-form-two-way-binding", component: TemplateDrivenFormTwoWayBindingComponent }
+      { path: "template-driven-form-two-way-binding", component: TemplateDrivenFormTwoWayBindingComponent },
+      { path: "template-driven-form-two-way-binding-validation", component: TemplateDrivenFormTwoWayBindingValidationComponent }
     ]
   },
   { path: "component-interaction", component: ComponentInteractionComponent },
