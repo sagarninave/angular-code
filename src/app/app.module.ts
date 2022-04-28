@@ -37,6 +37,7 @@ import { ReactiveFormGroupPopulateValuesComponent } from './component/forms/reac
 import { ComponentInteractionComponent } from './component/component-interaction/component-interaction.component';
 import { ChildComponentComponent } from './component/component-interaction/child-component/child-component.component';
 import { TemplateDrivenFormComponent } from './component/forms/template-driven-form/template-driven-form.component';
+import { TemplateDrivenFormTwoWayBindingComponent } from './component/forms/template-driven-form-two-way-binding/template-driven-form-two-way-binding.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,6 +72,7 @@ import { TemplateDrivenFormComponent } from './component/forms/template-driven-f
     ComponentInteractionComponent,
     ChildComponentComponent,
     TemplateDrivenFormComponent,
+    TemplateDrivenFormTwoWayBindingComponent,
   ],
   imports: [
     BrowserModule,
