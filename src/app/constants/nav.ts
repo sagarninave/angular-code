@@ -24,10 +24,11 @@ const links = [
       { url: "/forms/reactive-form-builder", title: "Reactive Form Builder" },
       { url: "/forms/reactive-nested-form-builder", title: "Reactive Nested Form Builder" },
       { url: "/forms/reactive-form-builder-validation", title: "Reactive Form Builder Validation" },
+      { url: "/forms/template-driven-form", title: "Template Driven Form" },
     ],
   },
   { url: "/component-interaction", title: "Component Interaction" },
-
+  
   
 ];
 

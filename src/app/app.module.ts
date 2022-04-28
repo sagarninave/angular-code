@@ -36,6 +36,7 @@ import { ReactiveFormBuilderValidationComponent } from './component/forms/reacti
 import { ReactiveFormGroupPopulateValuesComponent } from './component/forms/reactive-form-group-populate-values/reactive-form-group-populate-values.component';
 import { ComponentInteractionComponent } from './component/component-interaction/component-interaction.component';
 import { ChildComponentComponent } from './component/component-interaction/child-component/child-component.component';
+import { TemplateDrivenFormComponent } from './component/forms/template-driven-form/template-driven-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +70,7 @@ import { ChildComponentComponent } from './component/component-interaction/child
     ReactiveFormGroupPopulateValuesComponent,
     ComponentInteractionComponent,
     ChildComponentComponent,
+    TemplateDrivenFormComponent,
   ],
   imports: [
     BrowserModule,
