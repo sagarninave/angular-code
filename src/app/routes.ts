@@ -49,7 +49,7 @@ const route: Routes = [
       { path: "reactive-form-group-populate-values", component: ReactiveFormGroupPopulateValuesComponent },
       { path: "reactive-form-builder", component: ReactiveFormBuilderComponent },
       { path: "reactive-nested-form-builder", component: ReactiveNestedFormBuilderComponent },
-      { path: "reactive-form-builder-validation", component: ReactiveFormBuilderValidationComponent },
+      { path: "reactive-form-builder-validation", component: ReactiveFormBuilderValidationComponent }
     ]
   },
   { path: "component-interaction", component: ComponentInteractionComponent },
