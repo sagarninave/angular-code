@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from "@angular/core";
 @Component({
-  selector: 'app-template-driven-form',
-  templateUrl: './template-driven-form.component.html',
-  styleUrls: ['./template-driven-form.component.scss']
+  selector: "app-template-driven-form",
+  templateUrl: "./template-driven-form.component.html",
+  styleUrls: ["./template-driven-form.component.scss"],
 })
 export class TemplateDrivenFormComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  onSubmit(value): void {
+    console.log(value);
   }
-
 }
