@@ -22,6 +22,7 @@ import { ComponentInteractionComponent } from './component/component-interaction
 import { TemplateDrivenFormComponent } from './component/forms/template-driven-form/template-driven-form.component';
 import { TemplateDrivenFormTwoWayBindingComponent } from './component/forms/template-driven-form-two-way-binding/template-driven-form-two-way-binding.component';
 import { TemplateDrivenFormTwoWayBindingValidationComponent } from "./component/forms/template-driven-form-two-way-binding-validation/template-driven-form-two-way-binding-validation.component";
+import { LifeCycleComponent } from './component/life-cycle/life-cycle.component';
 
 const route: Routes = [
   { path: "", redirectTo: "binding", pathMatch: "full" },
@@ -59,6 +60,7 @@ const route: Routes = [
     ]
   },
   { path: "component-interaction", component: ComponentInteractionComponent },
+  { path: "life-cycle", component: LifeCycleComponent },
   { path: "**", component: PageNotFoundComponent }
 ];
 

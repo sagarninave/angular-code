@@ -30,6 +30,7 @@ const links = [
     ],
   },
   { url: "/component-interaction", title: "Component Interaction" },
+  { url: "/life-cycle", title: "Life Cycle" },
   
   
 ];
