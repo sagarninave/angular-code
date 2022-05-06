@@ -25,7 +25,6 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { ServiceComponent } from './component/service/service.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user.service';
-import { UserComponent } from './component/service/user/user.component';
 import { FormsComponent } from './component/forms/forms.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormGroupComponent } from './component/forms/reactive-form-group/reactive-form-group.component';
@@ -64,7 +63,6 @@ import { LifeCycleChildComponent } from './component/life-cycle/life-cycle-child
     HeaderComponent,
     NavBarComponent,
     ServiceComponent,
-    UserComponent,
     FormsComponent,
     ReactiveFormGroupComponent,
     ReactiveNestedFormGroupComponent,

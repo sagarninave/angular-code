@@ -10,7 +10,6 @@ import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.co
 import { PipeComponent } from "./component/pipe/pipe.component";
 import { ServiceComponent } from "./component/service/service.component";
 import { TwoWayBindingComponent } from "./component/binding/two-way-binding/two-way-binding.component";
-import { UserComponent } from "./component/service/user/user.component";
 import { FormsComponent } from "./component/forms/forms.component";
 import { ReactiveFormGroupComponent } from "./component/forms/reactive-form-group/reactive-form-group.component";
 import { ReactiveNestedFormGroupComponent } from "./component/forms/reactive-nested-form-group/reactive-nested-form-group.component";
@@ -42,7 +41,6 @@ const route: Routes = [
   { path: "pipes", component: PipeComponent },
   { path: "directives", component: DirectiveComponent },
   { path: "services", component: ServiceComponent },
-  // { path: "user/:id", component: UserComponent },
   {
     path: "forms",
     component: FormsComponent,
