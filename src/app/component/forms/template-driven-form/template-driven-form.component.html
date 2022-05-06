@@ -39,6 +39,18 @@
         </label>
       </div>
 
+      <div class="col-xs-12" ngModelGroup="address">
+        Address
+        <input type="text"  class="form-control formControl" name="first_line" ngModel placeholder="First Line" />
+        <input type="text"  class="form-control formControl" name="second_line" ngModel placeholder="Second Line" />
+        <input type="text"  class="form-control formControl" name="landmark" ngModel placeholder="Landmark" />
+        <input type="text"  class="form-control formControl" name="city" ngModel placeholder="City" />
+        <input type="text"  class="form-control formControl" name="district" ngModel placeholder="District" />
+        <input type="text"  class="form-control formControl" name="state" ngModel placeholder="State" />
+        <input type="text"  class="form-control formControl" name="country" ngModel placeholder="Country" />
+        <input type="text"  class="form-control formControl" name="pin_code" ngModel placeholder="Pin Code" />
+      </div>
+
       <div class="col-xs-12">
         <input type="submit" class="formControl submit" placeholder="Signup" [disabled]="!signupForm.valid"/>
       </div>

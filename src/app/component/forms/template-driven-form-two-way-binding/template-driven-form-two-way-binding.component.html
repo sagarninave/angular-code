@@ -83,6 +83,18 @@
         />
         <label class="form-check-label" for="flexRadioDefault2"> Female </label>
       </div>
+      
+      <div class="col-xs-12" ngModelGroup="address">
+        Address
+        <input type="text" class="form-control formControl" name="first_line" [(ngModel)]="user.address.first_line" placeholder="First Line" />
+        <input type="text" class="form-control formControl" name="second_line" [(ngModel)]="user.address.second_line" placeholder="Second Line" />
+        <input type="text" class="form-control formControl" name="landmark" [(ngModel)]="user.address.landmark" placeholder="Landmark" />
+        <input type="text" class="form-control formControl" name="city" [(ngModel)]="user.address.city" placeholder="City" />
+        <input type="text" class="form-control formControl" name="district" [(ngModel)]="user.address.district" placeholder="District" />
+        <input type="text" class="form-control formControl" name="state" [(ngModel)]="user.address.state" placeholder="State" />
+        <input type="text" class="form-control formControl" name="country" [(ngModel)]="user.address.country" placeholder="Country" />
+        <input type="text" class="form-control formControl" name="pin_code" [(ngModel)]="user.address.pin_code" placeholder="Pin Code" />
+      </div>
 
       <div class="col-xs-12">
         <button

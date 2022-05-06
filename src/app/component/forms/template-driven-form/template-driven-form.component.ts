@@ -11,5 +11,6 @@ export class TemplateDrivenFormComponent implements OnInit {
 
   onSubmit(value): void {
     console.log(value);
+    console.log(JSON.stringify(value));
   }
 }
