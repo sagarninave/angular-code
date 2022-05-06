@@ -19,21 +19,39 @@ const links = [
     title: "Forms",
     children: [
       { url: "/forms/reactive-form-group", title: "Reactive Form Group" },
-      { url: "/forms/reactive-nested-form-group", title: "Reactive Nested Form Group" },
-      { url: "/forms/reactive-form-group-populate-values", title: "Reactive Form Group Populate Value" },
+      {
+        url: "/forms/reactive-nested-form-group",
+        title: "Reactive Nested Form Group",
+      },
+      {
+        url: "/forms/reactive-form-group-populate-values",
+        title: "Reactive Form Group Populate Value",
+      },
       { url: "/forms/reactive-form-builder", title: "Reactive Form Builder" },
-      { url: "/forms/reactive-nested-form-builder", title: "Reactive Nested Form Builder" },
-      { url: "/forms/reactive-form-builder-validation", title: "Reactive Form Builder Validation" },
+      {
+        url: "/forms/reactive-nested-form-builder",
+        title: "Reactive Nested Form Builder",
+      },
+      {
+        url: "/forms/reactive-form-builder-validation",
+        title: "Reactive Form Builder Validation",
+      },
       { url: "/forms/template-driven-form", title: "Template Driven Form" },
-      { url: "/forms/template-driven-form-two-way-binding", title: "Template Driven Form Two Way Binding" },
-      { url: "/forms/template-driven-form-two-way-binding-validation", title: "Template Driven Form Two Way Binding Validation" }
+      {
+        url: "/forms/template-driven-form-two-way-binding",
+        title: "Template Driven Form Two Way Binding",
+      },
+      {
+        url: "/forms/template-driven-form-two-way-binding-validation",
+        title: "Template Driven Form Two Way Binding Validation",
+      },
     ],
   },
   { url: "/component-interaction", title: "Component Interaction" },
   { url: "/life-cycle", title: "Life Cycle" },
   { url: "/user", title: "User Module" },
-  
-  
+  { url: "/auth/signup", title: "Sign Up" },
+  { url: "/auth/login", title: "Login" },
 ];
 
 export default links;
