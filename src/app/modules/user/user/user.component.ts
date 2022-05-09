@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "./../../../service/user.service";
-import { v4 } from "uuid";
 import { IUser } from "src/app/interface";
 import { Router } from "@angular/router";
 @Component({
@@ -15,9 +14,6 @@ export class UserComponent implements OnInit {
     this.userService.getUsers().subscribe((result) => {
       this.users = result;
     });
-
-    // let myuuid = v4();
-    // console.log("Your UUID is: " + myuuid);
   }
 
   goToDetails(id): void {

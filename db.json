@@ -19,6 +19,35 @@
       "date_of_birth": "012/03/1995",
       "gender": "male",
       "address": "52c45f61-785f-4c67-ad03-5496f43454de"
+    },
+    {
+      "first_name": "d",
+      "last_name": "ninave",
+      "email": "sagarninave@gmamil.c",
+      "password": "",
+      "id": "e5abdebc-e314-40e3-982e-d1ac263dff5a"
+    },
+    {
+      "first_name": "sssss",
+      "last_name": "sssss",
+      "email": "sssssss",
+      "password": "ssssss",
+      "id": "19693f20-b9d8-4c91-a6ee-5f12949c354f",
+      "mobile": "",
+      "date_of_birth": "",
+      "gender": "",
+      "address": ""
+    },
+    {
+      "first_name": "zdszdsa",
+      "last_name": "dasdada",
+      "email": "sdsadasd",
+      "password": "asdsadsad",
+      "id": "f93ead2c-09a3-4b1c-949c-0636a28449ac",
+      "mobile": "",
+      "date_of_birth": "",
+      "gender": "",
+      "address": ""
     }
   ],
   "user_address": [
@@ -45,6 +74,4 @@
       "pin_code": "440017"
     }
   ]
-
-
 }

@@ -1,26 +1,22 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { apiconstants } from "src/app/constants/apiconstants";
+import { apiConstants } from "src/app/constants/api.constants";
 
 @Injectable({
   providedIn: "root",
 })
 export class UserService {
   getUsers(): Observable<any> {
-    return this.api.get(apiconstants.baseUrl + apiconstants.getAllUsers);
+    return this.api.get(apiConstants.getAllUsers);
   }
 
   getUserAddress(id): Observable<any> {
-    return this.api.get(
-      `${apiconstants.baseUrl}${apiconstants.getUserAddress}/${id}`
-    );
+    return this.api.get(`${apiConstants.getUserAddress}/${id}`);
   }
 
   getUser(id): Observable<any> {
-    return this.api.get(
-      `${apiconstants.baseUrl}${apiconstants.getAllUsers}/${id}`
-    );
+    return this.api.get(`${apiConstants.getAllUsers}/${id}`);
   }
 
   constructor(private api: HttpClient) {}
