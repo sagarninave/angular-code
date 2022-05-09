@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { AuthService } from "src/app/service/auth.service";
 import { v4 } from "uuid";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: "app-signup",
@@ -11,7 +12,11 @@ import { v4 } from "uuid";
 export class SignupComponent implements OnInit {
   signupForm: FormGroup;
 
-  constructor(private FB: FormBuilder, private auth: AuthService) {}
+  constructor(
+    private FB: FormBuilder,
+    private auth: AuthService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     this.createForm();
@@ -47,6 +52,8 @@ export class SignupComponent implements OnInit {
 
     this.auth
       .onSignup(values)
-      .subscribe((result) => console.log("result : ", result));
+      .subscribe((result) =>{
+        this.toastr.success('User registered successfully');
+      } );
   }
 }

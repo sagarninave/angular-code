@@ -40,6 +40,9 @@ import { TemplateDrivenFormTwoWayBindingComponent } from './component/forms/temp
 import { TemplateDrivenFormTwoWayBindingValidationComponent } from './component/forms/template-driven-form-two-way-binding-validation/template-driven-form-two-way-binding-validation.component';
 import { LifeCycleComponent } from './component/life-cycle/life-cycle.component';
 import { LifeCycleChildComponent } from './component/life-cycle/life-cycle-child/life-cycle-child.component';
+import { ToastrModule } from "ngx-toastr";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,10 +83,21 @@ import { LifeCycleChildComponent } from './component/life-cycle/life-cycle-child
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      disableTimeOut: false,
+      timeOut: 3000,
+      tapToDismiss: true,
+      easing: 'ease-in',
+      easeTime: 300,
+      newestOnTop: true,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }), 
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
