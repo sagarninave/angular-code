@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { AuthService } from "src/app/service/auth.service";
 import { v4 } from "uuid";
 import { ToastrService } from "ngx-toastr";
-
+import { Router } from "@angular/router";
 @Component({
   selector: "app-signup",
   templateUrl: "./signup.component.html",
@@ -15,7 +15,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private FB: FormBuilder,
     private auth: AuthService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -65,17 +66,18 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  onSubmitSignup(values) {
+  onSubmitSignup() {
     this.isSubmitted = true;
     if (this.signupForm.status === "INVALID") {
       return false;
     }
-    values.id = v4();
-    values.mobile = "";
-    values.date_of_birth = "";
-    values.gender = "";
-    values.address = "";
-    this.auth.onSignup(values).subscribe((result) => {
+    this.signupForm.value.id = v4();
+    this.signupForm.value.mobile = "";
+    this.signupForm.value.date_of_birth = "";
+    this.signupForm.value.gender = "";
+    this.signupForm.value.address = "";
+    this.router.navigate(["auth/login"]);
+    this.auth.onSignup(this.signupForm.value).subscribe((result) => {
       if (result) {
         this.isSubmitted = false;
         this.signupForm.reset();
