@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { AuthService } from "src/app/service/auth.service";
-import { v4 } from "uuid";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
 import { EncryptionService } from "src/app/service/encryption.service";
@@ -61,7 +60,10 @@ export class LoginComponent implements OnInit {
       return false;
     }
     this.userService.getUsers().subscribe((users: IUser[]) => {
-      console.log(users.filter((i) => this.loginForm.value.email === i.email));
+      console.log(users.filter((i) => this.loginForm.value.email === i.email)[0]);
+      const token = this.encryption.set(JSON.stringify(users.filter((i) => this.loginForm.value.email === i.email)[0]));
+      console.log("enc token : ", token)
+      console.log("dec token : ", this.encryption.get(token))
     });
   }
 }
