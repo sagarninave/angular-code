@@ -5,6 +5,8 @@ import { v4 } from "uuid";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
 import { EncryptionService } from "src/app/service/encryption.service";
+import { UserService } from "src/app/service/user.service";
+import { IUser } from "src/app/interface";
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -18,7 +20,8 @@ export class LoginComponent implements OnInit {
     private auth: AuthService,
     private toastr: ToastrService,
     private router: Router,
-    private encryption: EncryptionService
+    private encryption: EncryptionService,
+    private userService: UserService
   ) {}
 
   ngOnInit() {
@@ -57,7 +60,8 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.status === "INVALID") {
       return false;
     }
-    console.log(this.loginForm.value);
-
+    this.userService.getUsers().subscribe((users: IUser[]) => {
+      console.log(users.filter((i) => this.loginForm.value.email === i.email));
+    });
   }
 }
