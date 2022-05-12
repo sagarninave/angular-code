@@ -12,4 +12,8 @@ export class AuthService {
   onSignup(user: ISignup): Observable<any> {
     return this.http.post(apiConstants.signupUser, user);
   }
+
+  onLogin(user: ISignup): Observable<any> {
+    return this.http.get(apiConstants.signupUser + user.id);
+  }
 }
