@@ -4,6 +4,7 @@ import { AuthService } from "src/app/service/auth.service";
 import { v4 } from "uuid";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
+import { EncryptionService } from "src/app/service/encryption.service";
 @Component({
   selector: "app-signup",
   templateUrl: "./signup.component.html",
@@ -16,7 +17,8 @@ export class SignupComponent implements OnInit {
     private FB: FormBuilder,
     private auth: AuthService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    private encryption: EncryptionService
   ) {}
 
   ngOnInit() {
@@ -71,16 +73,19 @@ export class SignupComponent implements OnInit {
     if (this.signupForm.status === "INVALID") {
       return false;
     }
+
     this.signupForm.value.id = v4();
     this.signupForm.value.mobile = "";
     this.signupForm.value.date_of_birth = "";
     this.signupForm.value.gender = "";
     this.signupForm.value.address = "";
-    this.router.navigate(["auth/login"]);
+    this.signupForm.value.password = this.encryption.set(this.signupForm.value.password);;
+
     this.auth.onSignup(this.signupForm.value).subscribe((result) => {
       if (result) {
         this.isSubmitted = false;
         this.signupForm.reset();
+        this.router.navigate(["auth/login"]);
         this.toastr.success("User registered successfully");
       }
     });
