@@ -44,6 +44,7 @@ import { ToastrModule } from "ngx-toastr";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './Guard/auth.guard';
 import { UnauthorizedComponent } from './shared/unauthorized/unauthorized.component';
+import { CheckGuard } from './Guard/check.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -101,7 +102,7 @@ import { UnauthorizedComponent } from './shared/unauthorized/unauthorized.compon
       preventDuplicates: true,
     }), 
   ],
-  providers: [UserService, AuthGuard],
+  providers: [UserService, AuthGuard, CheckGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

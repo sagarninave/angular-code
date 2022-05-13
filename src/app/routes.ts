@@ -23,6 +23,7 @@ import { TemplateDrivenFormTwoWayBindingComponent } from "./component/forms/temp
 import { TemplateDrivenFormTwoWayBindingValidationComponent } from "./component/forms/template-driven-form-two-way-binding-validation/template-driven-form-two-way-binding-validation.component";
 import { LifeCycleComponent } from "./component/life-cycle/life-cycle.component";
 import { AuthGuard } from "src/app/Guard/auth.guard";
+import { CheckGuard } from "./Guard/check.guard";
 
 const route: Routes = [
   { path: "", redirectTo: "binding", pathMatch: "full" },
@@ -85,6 +86,7 @@ const route: Routes = [
     path: "auth",
     loadChildren: () =>
       import("./modules/auth/auth.module").then((m) => m.AuthModule),
+    canActivate: [CheckGuard]
   },
   {
     path: "user",
