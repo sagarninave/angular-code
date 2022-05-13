@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { AuthService } from "src/app/service/auth.service";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
 import { EncryptionService } from "src/app/service/encryption.service";
@@ -16,12 +15,11 @@ export class LoginComponent implements OnInit {
   isSubmitted: boolean = false;
   constructor(
     private FB: FormBuilder,
-    private auth: AuthService,
     private toastr: ToastrService,
     private router: Router,
     private encryption: EncryptionService,
     private userService: UserService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.createForm();
@@ -60,10 +58,15 @@ export class LoginComponent implements OnInit {
       return false;
     }
     this.userService.getUsers().subscribe((users: IUser[]) => {
-      console.log(users.filter((i) => this.loginForm.value.email === i.email)[0]);
-      const token = this.encryption.set(JSON.stringify(users.filter((i) => this.loginForm.value.email === i.email)[0]));
-      console.log("enc token : ", token)
-      console.log("dec token : ", this.encryption.get(token))
+      const user = users.filter((i) => this.loginForm.value.email === i.email)[0];
+      if (user) {
+        if (user.password === this.encryption.set(this.loginForm.value.password)) {
+          localStorage.setItem("token", this.encryption.set(user));
+          this.toastr.success("User login successfully");
+        } else {
+          this.toastr.error("Incorrect password");
+        }
+      }
     });
   }
 }

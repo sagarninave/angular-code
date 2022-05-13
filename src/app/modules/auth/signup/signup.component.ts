@@ -86,7 +86,7 @@ export class SignupComponent implements OnInit {
 
     this.userService.getUsers().subscribe((users: IUser[]) => {
       const userExist = users.filter((i) => this.signupForm.value.email === i.email);
-      if (!userExist && userExist.length === 0) {
+      if (userExist.length === 0) {
         this.auth.onSignup(this.signupForm.value).subscribe((result) => {
           if (result) {
             this.isSubmitted = false;
@@ -96,7 +96,7 @@ export class SignupComponent implements OnInit {
           }
         });
       } else {
-        this.toastr.success("User already existe");
+        this.toastr.error("User already exist");
       }
     });
   }
