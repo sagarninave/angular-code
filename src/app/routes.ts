@@ -22,6 +22,7 @@ import { TemplateDrivenFormComponent } from "./component/forms/template-driven-f
 import { TemplateDrivenFormTwoWayBindingComponent } from "./component/forms/template-driven-form-two-way-binding/template-driven-form-two-way-binding.component";
 import { TemplateDrivenFormTwoWayBindingValidationComponent } from "./component/forms/template-driven-form-two-way-binding-validation/template-driven-form-two-way-binding-validation.component";
 import { LifeCycleComponent } from "./component/life-cycle/life-cycle.component";
+import { AuthGuard } from "src/app/Guard/auth.guard";
 
 const route: Routes = [
   { path: "", redirectTo: "binding", pathMatch: "full" },
@@ -89,6 +90,7 @@ const route: Routes = [
     path: "user",
     loadChildren: () =>
       import("./modules/user/user.module").then((m) => m.UserModule),
+    canActivate: [AuthGuard]
   },
   { path: "**", component: PageNotFoundComponent },
 ];

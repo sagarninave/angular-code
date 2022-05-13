@@ -16,4 +16,8 @@ export class AuthService {
   onLogin(user: ISignup): Observable<any> {
     return this.http.get(apiConstants.signupUser + user.id);
   }
+
+  isLoggedIn(){
+    return !!localStorage.getItem("token");
+  }
 }

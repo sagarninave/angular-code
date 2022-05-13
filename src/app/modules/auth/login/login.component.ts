@@ -63,6 +63,7 @@ export class LoginComponent implements OnInit {
         if (user.password === this.encryption.set(this.loginForm.value.password)) {
           localStorage.setItem("token", this.encryption.set(user));
           this.toastr.success("User login successfully");
+          this.router.navigate(["/auth/login"]);
         } else {
           this.toastr.error("Incorrect password");
         }

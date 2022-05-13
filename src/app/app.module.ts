@@ -42,7 +42,8 @@ import { LifeCycleComponent } from './component/life-cycle/life-cycle.component'
 import { LifeCycleChildComponent } from './component/life-cycle/life-cycle-child/life-cycle-child.component';
 import { ToastrModule } from "ngx-toastr";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { AuthGuard } from './Guard/auth.guard';
+import { UnauthorizedComponent } from './shared/unauthorized/unauthorized.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +81,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TemplateDrivenFormTwoWayBindingValidationComponent,
     LifeCycleComponent,
     LifeCycleChildComponent,
+    UnauthorizedComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,7 +101,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       preventDuplicates: true,
     }), 
   ],
-  providers: [UserService],
+  providers: [UserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
