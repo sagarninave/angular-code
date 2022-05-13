@@ -5,6 +5,8 @@ import { v4 } from "uuid";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
 import { EncryptionService } from "src/app/service/encryption.service";
+import { UserService } from "src/app/service/user.service";
+import { IUser } from "src/app/interface";
 @Component({
   selector: "app-signup",
   templateUrl: "./signup.component.html",
@@ -18,8 +20,9 @@ export class SignupComponent implements OnInit {
     private auth: AuthService,
     private toastr: ToastrService,
     private router: Router,
-    private encryption: EncryptionService
-  ) {}
+    private encryption: EncryptionService,
+    private userService: UserService
+  ) { }
 
   ngOnInit() {
     this.createForm();
@@ -81,12 +84,19 @@ export class SignupComponent implements OnInit {
     this.signupForm.value.address = "";
     this.signupForm.value.password = this.encryption.set(this.signupForm.value.password);;
 
-    this.auth.onSignup(this.signupForm.value).subscribe((result) => {
-      if (result) {
-        this.isSubmitted = false;
-        this.signupForm.reset();
-        this.router.navigate(["auth/login"]);
-        this.toastr.success("User registered successfully");
+    this.userService.getUsers().subscribe((users: IUser[]) => {
+      const userExist = users.filter((i) => this.signupForm.value.email === i.email);
+      if (!userExist && userExist.length === 0) {
+        this.auth.onSignup(this.signupForm.value).subscribe((result) => {
+          if (result) {
+            this.isSubmitted = false;
+            this.signupForm.reset();
+            this.router.navigate(["auth/login"]);
+            this.toastr.success("User registered successfully");
+          }
+        });
+      } else {
+        this.toastr.success("User already existe");
       }
     });
   }
