@@ -10,10 +10,11 @@ const links = [
       { url: "/binding/event-binding", title: "Event binding" },
       { url: "/binding/two-way-binding", title: "Two Way binding" },
     ],
+    access_level: "default"
   },
-  { url: "/pipes", title: "Pipes" },
-  { url: "/directives", title: "Directives" },
-  { url: "/services", title: "Services" },
+  { url: "/pipes", title: "Pipes", access_level: "default" },
+  { url: "/directives", title: "Directives", access_level: "default" },
+  { url: "/services", title: "Services", access_level: "default" },
   {
     url: "/forms",
     title: "Forms",
@@ -46,12 +47,13 @@ const links = [
         title: "Template Driven Form Two Way Binding Validation",
       },
     ],
+    access_level: "default"
   },
-  { url: "/component-interaction", title: "Component Interaction" },
-  { url: "/life-cycle", title: "Life Cycle" },
-  { url: "/user", title: "User Module" },
-  { url: "/auth/signup", title: "Sign Up" },
-  { url: "/auth/login", title: "Login" },
+  { url: "/component-interaction", title: "Component Interaction", access_level: "default" },
+  { url: "/life-cycle", title: "Life Cycle", access_level: "default" },
+  { url: "/user", title: "User Module", access_level: "default" },
+  { url: "/auth/signup", title: "Sign Up", access_level: "unauthenticated" },
+  { url: "/auth/login", title: "Login", access_level: "unauthenticated" },
 ];
 
 export default links;
