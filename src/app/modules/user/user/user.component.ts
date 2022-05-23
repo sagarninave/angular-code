@@ -9,6 +9,7 @@ import { Router } from "@angular/router";
 })
 export class UserComponent implements OnInit {
   users: IUser[];
+  search;
 
   getUsersData(): void {
     this.userService.getUsers().subscribe((result) => {
