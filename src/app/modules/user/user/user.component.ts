@@ -12,6 +12,8 @@ import { ToastrService } from "ngx-toastr";
 export class UserComponent implements OnInit {
   users: IUser[] = [];
   search: string = "";
+  isEditUser: boolean = false;
+  editUserData: IUser;
 
   constructor(
     private userService: UserService,
@@ -33,18 +35,15 @@ export class UserComponent implements OnInit {
     this.router.navigate(["user", id]);
   }
 
-  addUser(): void {
-    console.log("add")
-
-  }
-
-  editUser(e): void {
-    console.log("editUser")
+  editUser(e, user): void {
+    console.log("editUser",user)
     e.stopPropagation();
+    document.getElementById("addUserBtn").click();
+    this.isEditUser = true;
+    this.editUser = user
   }
 
   deleteUser(e, userId): void {
-    console.log("deleteUser")
     e.stopPropagation();
     this.userService.deleteUser(userId).subscribe((result) => {
       this.toastr.success("User delete successfully");

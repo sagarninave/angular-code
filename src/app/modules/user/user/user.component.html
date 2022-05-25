@@ -1,10 +1,24 @@
 <div class="row">
   <div class="col-xs-8 col-sm-6 col-md-4 col-xl-3">
-    <input type="text" placeholder="Search User" class="form-control" name="search" [(ngModel)]="search"
-      autocomplete="off" />
+    <input
+      type="text"
+      placeholder="Search User"
+      class="form-control"
+      name="search"
+      [(ngModel)]="search"
+      autocomplete="off"
+    />
   </div>
   <div class="col-xs-4 col-sm-6 col-md-8 col-xl-9">
-    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalCenter">Add</button>
+    <button
+      type="button"
+      class="btn btn-primary float-right"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+      id="addUserBtn"
+    >
+      Add
+    </button>
   </div>
 </div>
 <table class="table table-hover">
@@ -19,15 +33,31 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users | filter:search; let i = index" (click)="goToDetails(user.id)" class="pointer">
-      <th scope="row">{{i+1}}</th>
-      <td>{{user?.first_name}}</td>
-      <td>{{user?.last_name}}</td>
-      <td>{{user?.email}}</td>
-      <td>{{user?.mobile}}</td>
+    <tr
+      *ngFor="let user of users | filter: search; let i = index"
+      (click)="goToDetails(user.id)"
+      class="pointer"
+    >
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ user?.first_name }}</td>
+      <td>{{ user?.last_name }}</td>
+      <td>{{ user?.email }}</td>
+      <td>{{ user?.mobile }}</td>
       <td>
-        <button type="button" class="btn btn-primary me-2" (click)="editUser($event);">Edit</button>
-        <button type="button" class="btn btn-danger" (click)="deleteUser($event, user.id);">Delete</button>
+        <button
+          type="button"
+          class="btn btn-primary me-2"
+          (click)="editUser($event, user)"
+        >
+          Edit
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="deleteUser($event, user.id)"
+        >
+          Delete
+        </button>
       </td>
     </tr>
   </tbody>
