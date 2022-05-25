@@ -65,15 +65,84 @@ export class AddUserComponent implements OnInit {
           Validators.maxLength(10),
         ],
       ],
+      date_of_birth: [
+        "",
+        [
+          Validators.required,
+        ],
+      ],
+      gender: [
+        "",
+        [
+          Validators.required,
+        ],
+      ],
+      address: this.FB.group({
+        first_line: [
+          "",
+          [
+            Validators.required,
+          ],
+        ],
+        second_line: [
+          "",
+          [
+            Validators.required,
+          ],
+        ],
+        landmark: [
+          "",
+          [
+            Validators.required,
+          ],
+        ],
+        city: [
+          "",
+          [
+            Validators.required,
+          ],
+        ],
+        district: [
+          "",
+          [
+            Validators.required,
+          ],
+        ],
+        state: [
+          "",
+          [
+            Validators.required,
+          ],
+        ],
+        country: [
+          "",
+          [
+            Validators.required,
+          ],
+        ],
+        pin_code: [
+          "",
+          [
+            Validators.required,
+          ],
+        ],
+      })
     });
   }
 
   onSubmitAddUser() {
+    console.log(this.addUserForm.value)
+
+    // if(!this.addUserForm.controls['gender']){
+    //   this.addUserForm.controls['gender'].setErrors({'incorrect': true});
+
+    // }
     this.isSubmitted = true;
     if (this.addUserForm.status === "INVALID") {
       return false;
     }
 
+    return false
     this.addUserForm.value.id = v4();
     this.addUserForm.value.mobile = "";
     this.addUserForm.value.date_of_birth = "";
@@ -92,14 +161,14 @@ export class AddUserComponent implements OnInit {
             this.toastr.success("User registered successfully");
             document.getElementById("close").click();
           }
-        });EventEmitter
+        }); EventEmitter
       } else {
         this.toastr.error("User already exist");
       }
     });
   }
 
-  onClose():void{
+  onClose(): void {
     this.addUserForm.reset();
   }
 }

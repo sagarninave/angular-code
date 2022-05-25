@@ -10,26 +10,25 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <form
-      class="mx-1 mx-md-4 my-md-4"
-      [formGroup]="addUserForm"
-      (ngSubmit)="onSubmitAddUser()"
-    >
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Add User</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-          id="close"
-          (click)="onClose()"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       
-          <div class="d-flex flex-row align-items-center mb-4">
+        class="mx-md-4 my-md-4"
+        [formGroup]="addUserForm"
+        (ngSubmit)="onSubmitAddUser()"
+      >
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add User</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+            id="close"
+            (click)="onClose()"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex flex-row align-items-center mb-4 gap">
             <div class="form-outline flex-fill mb-0">
               <input
                 type="text"
@@ -55,9 +54,7 @@
                 </span>
               </p>
             </div>
-          </div>
 
-          <div class="d-flex flex-row align-items-center mb-4">
             <div class="form-outline flex-fill mb-0">
               <input
                 type="text"
@@ -85,7 +82,7 @@
             </div>
           </div>
 
-          <div class="d-flex flex-row align-items-center mb-4">
+          <div class="d-flex flex-row align-items-center mb-4 gap">
             <div class="form-outline flex-fill mb-0">
               <input
                 type="email"
@@ -114,9 +111,7 @@
                 </span>
               </p>
             </div>
-          </div>
 
-          <div class="d-flex flex-row align-items-center mb-4">
             <div class="form-outline flex-fill mb-0">
               <input
                 type="text"
@@ -140,17 +135,235 @@
               </p>
             </div>
           </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Close
-        </button>
-        <button type="submit" class="btn btn-primary">Add</button>
-      </div>
-    </form>
 
+          <div class="d-flex flex-row align-items-center mb-4 gap">
+            <div class="form-outline flex-fill mb-0">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                formControlName="gender"
+                [ngClass]="{
+                  'is-invalid': isSubmitted && f.gender.errors
+                }"
+              >
+                <option value="" disabled>Select Gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+              </select>
+              <p
+                *ngIf="isSubmitted && f.gender.errors"
+                class="text-danger error mb-0"
+              >
+                <span *ngIf="f.gender.errors.required">
+                  Gender is required.
+                </span>
+              </p>
+            </div>
 
+            <div class="form-outline flex-fill mb-0">
+              <input
+                type="date"
+                class="form-control"
+                id="myColor"
+                formControlName="date_of_birth"
+                [ngClass]="{
+                  'is-invalid': isSubmitted && f.date_of_birth.errors
+                }"
+              />
+              <p
+                *ngIf="isSubmitted && f.date_of_birth.errors"
+                class="text-danger error mb-0"
+              >
+                <span *ngIf="f.date_of_birth.errors.required">
+                  Date of Birth is required.
+                </span>
+              </p>
+            </div>
+          </div>
 
+          <ng-container formGroupName="address">
+            <div class="d-flex flex-row align-items-center mb-4 gap">
+              <div class="form-outline flex-fill mb-0">
+                <input
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid':
+                      isSubmitted && f.address.controls.first_line.errors
+                  }"
+                  formControlName="first_line"
+                  placeholder="First Line"
+                />
+                <p
+                  *ngIf="isSubmitted && f.address.controls.first_line.errors"
+                  class="text-danger error mb-0"
+                >
+                  <span *ngIf="f.address.controls.first_line.errors.required">
+                    First Line is required.
+                  </span>
+                </p>
+              </div>
+
+              <div class="form-outline flex-fill mb-0">
+                <input
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid':
+                      isSubmitted && f.address.controls.second_line.errors
+                  }"
+                  formControlName="second_line"
+                  placeholder="Second Line"
+                />
+                <p
+                  *ngIf="isSubmitted && f.address.controls.second_line.errors"
+                  class="text-danger error mb-0"
+                >
+                  <span *ngIf="f.address.controls.second_line.errors.required">
+                    Second Line is required.
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="d-flex flex-row align-items-center mb-4 gap">
+              <div class="form-outline flex-fill mb-0">
+                <input
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid':
+                      isSubmitted && f.address.controls.landmark.errors
+                  }"
+                  formControlName="landmark"
+                  placeholder="Landmark"
+                />
+                <p
+                  *ngIf="isSubmitted && f.address.controls.landmark.errors"
+                  class="text-danger error mb-0"
+                >
+                  <span *ngIf="f.address.controls.landmark.errors.required">
+                    Landmark is required.
+                  </span>
+                </p>
+              </div>
+
+              <div class="form-outline flex-fill mb-0">
+                <input
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid': isSubmitted && f.address.controls.city.errors
+                  }"
+                  formControlName="city"
+                  placeholder="City"
+                />
+                <p
+                  *ngIf="isSubmitted && f.address.controls.city.errors"
+                  class="text-danger error mb-0"
+                >
+                  <span *ngIf="f.address.controls.city.errors.required">
+                    City is required.
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="d-flex flex-row align-items-center mb-4 gap">
+              <div class="form-outline flex-fill mb-0">
+                <input
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid':
+                      isSubmitted && f.address.controls.district.errors
+                  }"
+                  formControlName="district"
+                  placeholder="District"
+                />
+                <p
+                  *ngIf="isSubmitted && f.address.controls.district.errors"
+                  class="text-danger error mb-0"
+                >
+                  <span *ngIf="f.address.controls.district.errors.required">
+                    District is required.
+                  </span>
+                </p>
+              </div>
+
+              <div class="form-outline flex-fill mb-0">
+                <input
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid': isSubmitted && f.address.controls.state.errors
+                  }"
+                  formControlName="state"
+                  placeholder="State"
+                />
+                <p
+                  *ngIf="isSubmitted && f.address.controls.state.errors"
+                  class="text-danger error mb-0"
+                >
+                  <span *ngIf="f.address.controls.state.errors.required">
+                    State is required.
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="d-flex flex-row align-items-center mb-4 gap">
+              <div class="form-outline flex-fill mb-0">
+                <input
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid':
+                      isSubmitted && f.address.controls.country.errors
+                  }"
+                  formControlName="country"
+                  placeholder="Country"
+                />
+                <p
+                  *ngIf="isSubmitted && f.address.controls.country.errors"
+                  class="text-danger error mb-0"
+                >
+                  <span *ngIf="f.address.controls.country.errors.required">
+                    Country is required.
+                  </span>
+                </p>
+              </div>
+
+              <div class="form-outline flex-fill mb-0">
+                <input
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid':
+                      isSubmitted && f.address.controls.pin_code.errors
+                  }"
+                  formControlName="pin_code"
+                  placeholder="Pin Code"
+                />
+                <p
+                  *ngIf="isSubmitted && f.address.controls.pin_code.errors"
+                  class="text-danger error mb-0"
+                >
+                  <span *ngIf="f.address.controls.pin_code.errors.required">
+                    Pin Code is required.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
