@@ -5,11 +5,10 @@
   role="dialog"
   aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true"
+  (blur)="onClose()"
 >
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-
-
       <form
       class="mx-1 mx-md-4 my-md-4"
       [formGroup]="addUserForm"
@@ -23,6 +22,7 @@
           data-dismiss="modal"
           aria-label="Close"
           id="close"
+          (click)="onClose()"
         >
           <span aria-hidden="true">&times;</span>
         </button>

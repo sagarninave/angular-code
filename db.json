@@ -45,6 +45,17 @@
       "gender": "",
       "role": "member",
       "address": ""
+    },
+    {
+      "first_name": "rohan",
+      "last_name": "chitnis",
+      "email": "rohanchitnis@yopmail.com",
+      "mobile": "",
+      "id": "7010d2c7-881d-4985-811a-39dcc09c8dd6",
+      "date_of_birth": "",
+      "gender": "",
+      "role": "member",
+      "address": ""
     }
   ],
   "user_address": [

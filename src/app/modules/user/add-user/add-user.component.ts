@@ -82,7 +82,7 @@ export class AddUserComponent implements OnInit {
     this.addUserForm.value.address = "";
 
     this.userService.getUsers().subscribe((users: IUser[]) => {
-      const userExist = users.filter((i) => this.addUserForm.value.email === i.email);
+      const userExist = users.filter((i) => this.addUserForm.value.email === i.email && this.addUserForm.value.role === i.role);
       if (userExist.length === 0) {
         this.auth.onSignup(this.addUserForm.value).subscribe((result) => {
           if (result) {
@@ -99,4 +99,7 @@ export class AddUserComponent implements OnInit {
     });
   }
 
+  onClose():void{
+    this.addUserForm.reset();
+  }
 }
