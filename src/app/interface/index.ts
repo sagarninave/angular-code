@@ -1,3 +1,3 @@
-export { IUser, IUserAddress } from "./user.interface";
-export { IEmployee } from "./employee.interface";
-export { ISignup } from "./auth.interface";
+export * from "./user.interface";
+export * from "./employee.interface";
+export * from "./auth.interface";

@@ -25,39 +25,28 @@
       "address": ""
     },
     {
-      "first_name": "rohan",
-      "last_name": "chitnis",
-      "email": "rohanchitnis@yopmail.com",
-      "mobile": "",
-      "id": "7010d2c7-881d-4985-811a-39dcc09c8dd6",
-      "date_of_birth": "",
-      "gender": "",
-      "role": "member",
-      "address": ""
+      "first_name": "sagar",
+      "last_name": "ninave",
+      "email": "sagarninave@gmail.com",
+      "mobile": "9657445206",
+      "date_of_birth": "1996-06-08",
+      "gender": "male",
+      "address": "9528eaef-5263-4713-80a9-ed1f2713750a",
+      "id": "03e3dfa9-0729-492a-a849-ba554c129962",
+      "role": "member"
     }
   ],
   "user_address": [
     {
-      "id": "bd85046a-8806-4df7-baaa-819a7f5a3ff2",
-      "first_line": "timki, rambhaji road",
-      "second_line": "near nakaloba temple",
-      "landmark": "nakaloba temple",
+      "first_line": "timki",
+      "second_line": "rambhaji road",
+      "landmark": "near nakalova temple",
       "city": "nagpur",
       "district": "nagpur",
       "state": "maharashtra",
-      "country": "india",
-      "pin_code": "440018"
-    },
-    {
-      "id": "52c45f61-785f-4c67-ad03-5496f43454de",
-      "first_line": "kumbar pura, badakas square",
-      "second_line": "near vindheshwari mata temple, mahal",
-      "landmark": "near vindheshwari mata temple",
-      "city": "nagpur",
-      "district": "nagpur",
-      "state": "maharashtra",
-      "country": "india",
-      "pin_code": "440017"
+      "country": "India",
+      "pin_code": "440018",
+      "id": "9528eaef-5263-4713-80a9-ed1f2713750a"
     }
   ]
 }

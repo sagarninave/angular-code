@@ -3,4 +3,5 @@ export const apiConstants = {
   getAllUsers: `${environment.baseUrl}/users`,
   getUserAddress: `${environment.baseUrl}/user_address`,
   signupUser: `${environment.baseUrl}/users`,
+  addUserAddress: `${environment.baseUrl}/user_address`,
 };
