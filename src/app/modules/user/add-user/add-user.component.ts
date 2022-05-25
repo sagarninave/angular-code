@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { AuthService } from "src/app/service/auth.service";
 import { v4 } from "uuid";
@@ -16,6 +16,7 @@ export class AddUserComponent implements OnInit {
 
   addUserForm: FormGroup;
   isSubmitted: boolean = false;
+  @Output() refresh = new EventEmitter<any>();
   constructor(
     private FB: FormBuilder,
     private auth: AuthService,
@@ -91,10 +92,11 @@ export class AddUserComponent implements OnInit {
           if (result) {
             this.isSubmitted = false;
             this.addUserForm.reset();
-            this.router.navigate(["auth/login"]);
+            document.getElementById("close").click();
+            this.refresh.emit(true);
             this.toastr.success("User registered successfully");
           }
-        });
+        });EventEmitter
       } else {
         this.toastr.error("User already exist");
       }
