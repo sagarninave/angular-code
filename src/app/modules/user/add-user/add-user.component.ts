@@ -3,8 +3,6 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { AuthService } from "src/app/service/auth.service";
 import { v4 } from "uuid";
 import { ToastrService } from "ngx-toastr";
-import { Router } from "@angular/router";
-import { EncryptionService } from "src/app/service/encryption.service";
 import { UserService } from "src/app/service/user.service";
 import { IUser } from "src/app/interface";
 @Component({
@@ -21,8 +19,6 @@ export class AddUserComponent implements OnInit {
     private FB: FormBuilder,
     private auth: AuthService,
     private toastr: ToastrService,
-    private router: Router,
-    private encryption: EncryptionService,
     private userService: UserService
   ) { }
 
@@ -92,9 +88,9 @@ export class AddUserComponent implements OnInit {
           if (result) {
             this.isSubmitted = false;
             this.addUserForm.reset();
-            document.getElementById("close").click();
             this.refresh.emit(true);
             this.toastr.success("User registered successfully");
+            document.getElementById("close").click();
           }
         });EventEmitter
       } else {

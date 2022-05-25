@@ -19,5 +19,9 @@ export class UserService {
     return this.api.get(`${apiConstants.getAllUsers}/${id}`);
   }
 
+  deleteUser(id): Observable<any> {
+    return this.api.delete(`${apiConstants.getAllUsers}/${id}`);
+  }
+
   constructor(private api: HttpClient) {}
 }

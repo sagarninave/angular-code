@@ -1,18 +1,6 @@
 {
   "users": [
     {
-      "first_name": "sdsd",
-      "last_name": "sdsds",
-      "email": "sagar@yopmail.com",
-      "password": "6PRBz1z9zIiAbRSLmVC/lw==",
-      "id": "05714494-f6f2-4d90-b830-9b46655529bb",
-      "mobile": "",
-      "date_of_birth": "",
-      "gender": "",
-      "role": "admin",
-      "address": ""
-    },
-    {
       "first_name": "sanket",
       "last_name": "wankhede",
       "email": "sanketwankhede@gmail.com",
@@ -48,33 +36,11 @@
       "address": ""
     },
     {
-      "first_name": "sds",
-      "last_name": "dsd",
-      "email": "rajeshborikar2@yopmail.com",
-      "mobile": "",
-      "id": "ee678753-fea7-438f-9e38-0c1d0c2fee31",
-      "date_of_birth": "",
-      "gender": "",
-      "role": "member",
-      "address": ""
-    },
-    {
       "first_name": "sssssss",
       "last_name": "sssssss",
       "email": "sssss@yopmail.com",
       "mobile": "",
       "id": "ddb7f4f8-75a7-462b-ace3-803d031c1027",
-      "date_of_birth": "",
-      "gender": "",
-      "role": "member",
-      "address": ""
-    },
-    {
-      "first_name": "qqqqqqq",
-      "last_name": "qqqqqq",
-      "email": "qqqq@yopmail.com",
-      "mobile": "",
-      "id": "f4ac3ef1-762e-46e8-8bfa-a5dc5bccda61",
       "date_of_birth": "",
       "gender": "",
       "role": "member",

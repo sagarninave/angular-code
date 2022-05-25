@@ -27,7 +27,7 @@
       <td>{{user?.mobile}}</td>
       <td>
         <button type="button" class="btn btn-primary me-2" (click)="editUser($event);">Edit</button>
-        <button type="button" class="btn btn-danger" (click)="deleteUser($event);">Delete</button>
+        <button type="button" class="btn btn-danger" (click)="deleteUser($event, user.id);">Delete</button>
       </td>
     </tr>
   </tbody>
