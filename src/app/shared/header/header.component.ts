@@ -11,13 +11,18 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   navLink;
+  isLoggedIn: boolean;
 
   ngOnInit() {
     this.init();
   }
 
   init() {
-    const isLoggedIn = this.authService.isLoggedIn();
-    this.navLink = links.filter(i => i.access_level === "default" || (i.access_level === "unauthenticated" && !isLoggedIn));
+    this.isLoggedIn = this.authService.isLoggedIn();
+    this.navLink = links.filter(i => i.access_level === "default" || (i.access_level === "unauthenticated" && !this.isLoggedIn));
+  }
+
+  logout(): void {
+    localStorage.removeItem("token")
   }
 }

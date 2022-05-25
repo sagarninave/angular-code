@@ -7,6 +7,7 @@ export interface IUser {
   mobile: string;
   date_of_birth: string;
   gender: string;
+  role: string;
   nationality: string;
   address: IUserAddress;
 }

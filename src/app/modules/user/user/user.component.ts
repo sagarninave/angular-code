@@ -11,6 +11,13 @@ export class UserComponent implements OnInit {
   users: IUser[];
   search;
 
+
+  constructor(private userService: UserService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.getUsersData();
+  }
+
   getUsersData(): void {
     this.userService.getUsers().subscribe((result) => {
       this.users = result;
@@ -21,9 +28,18 @@ export class UserComponent implements OnInit {
     this.router.navigate(["user", id]);
   }
 
-  constructor(private userService: UserService, private router: Router) {}
+  addUser(): void {
+    console.log("add")
 
-  ngOnInit(): void {
-    this.getUsersData();
+  }
+
+  editUser(e): void {
+    console.log("editUser")
+    e.stopPropagation();
+  }
+
+  deleteUser(e): void {
+    console.log("deleteUser")
+    e.stopPropagation();
   }
 }

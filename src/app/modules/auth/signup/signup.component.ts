@@ -81,6 +81,7 @@ export class SignupComponent implements OnInit {
     this.signupForm.value.mobile = "";
     this.signupForm.value.date_of_birth = "";
     this.signupForm.value.gender = "";
+    this.signupForm.value.role = "admin";
     this.signupForm.value.address = "";
     this.signupForm.value.password = this.encryption.set(this.signupForm.value.password);;
 

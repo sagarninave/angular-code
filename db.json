@@ -9,6 +9,7 @@
       "mobile": "",
       "date_of_birth": "",
       "gender": "",
+      "role": "admin",
       "address": ""
     },
     {
@@ -20,6 +21,19 @@
       "mobile": "",
       "date_of_birth": "",
       "gender": "",
+      "role": "admin",
+      "address": ""
+    },
+    {
+      "first_name": "rohan",
+      "last_name": "chitnis",
+      "email": "rohanchitnis@yopmail.com",
+      "password": "kBYu42jX2hiDIxk2uaDnjA==",
+      "id": "095350bb-a4c0-42a9-86d9-2adfd927149b",
+      "mobile": "",
+      "date_of_birth": "",
+      "gender": "",
+      "role": "admin",
       "address": ""
     }
   ],
