@@ -8,9 +8,8 @@ import { Router } from "@angular/router";
   styleUrls: ["./user.component.scss"],
 })
 export class UserComponent implements OnInit {
-  users: IUser[];
-  search;
-
+  users: IUser[] = [];
+  search: string = "";
 
   constructor(private userService: UserService, private router: Router) { }
 

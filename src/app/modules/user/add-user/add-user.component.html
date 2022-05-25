@@ -1,0 +1,155 @@
+<div
+  class="modal fade"
+  id="exampleModalCenter"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+
+      <form
+      class="mx-1 mx-md-4 my-md-4"
+      [formGroup]="addUserForm"
+      (ngSubmit)="onSubmitAddUser()"
+    >
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add User</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+          <div class="d-flex flex-row align-items-center mb-4">
+            <div class="form-outline flex-fill mb-0">
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid': isSubmitted && f.first_name.errors
+                }"
+                formControlName="first_name"
+                placeholder="First Name"
+              />
+              <p
+                *ngIf="isSubmitted && f.first_name.errors"
+                class="text-danger error mb-0"
+              >
+                <span *ngIf="f.first_name.errors.required">
+                  First name is required.
+                </span>
+                <span *ngIf="f.first_name.errors.minlength">
+                  Minimum 3 characters are allowed.
+                </span>
+                <span *ngIf="f.first_name.errors.maxlength">
+                  Maximum 20 characters are allowed.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div class="d-flex flex-row align-items-center mb-4">
+            <div class="form-outline flex-fill mb-0">
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid': isSubmitted && f.last_name.errors
+                }"
+                formControlName="last_name"
+                placeholder="Last Name"
+              />
+              <p
+                *ngIf="isSubmitted && f.last_name.errors"
+                class="text-danger error mb-0"
+              >
+                <span *ngIf="f.last_name.errors.required">
+                  Last name is required.
+                </span>
+                <span *ngIf="f.last_name.errors.minlength">
+                  Minimum 3 characters are allowed.
+                </span>
+                <span *ngIf="f.last_name.errors.maxlength">
+                  Maximum 20 characters are allowed.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div class="d-flex flex-row align-items-center mb-4">
+            <div class="form-outline flex-fill mb-0">
+              <input
+                type="email"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid': isSubmitted && f.email.errors
+                }"
+                formControlName="email"
+                placeholder="Email"
+              />
+              <p
+                *ngIf="isSubmitted && f.email.errors"
+                class="text-danger error mb-0"
+              >
+                <span *ngIf="f.email.errors.required">
+                  Email is required.
+                </span>
+                <span *ngIf="f.email.errors.email" class="d-block">
+                  Email must be a valid email address
+                </span>
+                <span *ngIf="f.email.errors.minlength">
+                  Minimum 8 characters are allowed.
+                </span>
+                <span *ngIf="f.email.errors.maxlength">
+                  Maximum 50 characters are allowed.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div class="d-flex flex-row align-items-center mb-4">
+            <div class="form-outline flex-fill mb-0">
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid': isSubmitted && f.mobile.errors
+                }"
+                formControlName="mobile"
+                placeholder="Mobile"
+              />
+              <p
+                *ngIf="isSubmitted && f.mobile.errors"
+                class="text-danger error mb-0"
+              >
+                <span *ngIf="f.mobile.errors.required">
+                  Mobile number is required.
+                </span>
+                <span *ngIf="f.mobile.errors.maxlength">
+                  Maximum 10 characters are allowed.
+                </span>
+              </p>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </form>
+
+
+
+    </div>
+  </div>
+</div>

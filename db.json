@@ -35,6 +35,28 @@
       "gender": "",
       "role": "admin",
       "address": ""
+    },
+    {
+      "first_name": "rajesh",
+      "last_name": "borikar",
+      "email": "rajeshborikar@yopmail.com",
+      "mobile": "",
+      "id": "d2488e53-b127-4858-936b-7ec43bd2317d",
+      "date_of_birth": "",
+      "gender": "",
+      "role": "member",
+      "address": ""
+    },
+    {
+      "first_name": "sds",
+      "last_name": "dsd",
+      "email": "rajeshborikar2@yopmail.com",
+      "mobile": "",
+      "id": "ee678753-fea7-438f-9e38-0c1d0c2fee31",
+      "date_of_birth": "",
+      "gender": "",
+      "role": "member",
+      "address": ""
     }
   ],
   "user_address": [
