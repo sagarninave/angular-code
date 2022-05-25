@@ -16,30 +16,22 @@ export class UserDetailsComponent implements OnInit {
       this.userService
         .getUserAddress(result.address)
         .subscribe((address_result) => {
-          tempUser.address = address_result;
+          tempUser.address = Object.keys(address_result)
+            .map(
+              (addressItem) => {
+                if (addressItem !== "id") return address_result[addressItem];
+              }
+            )
+            .join(", ");
           this.user = tempUser;
         });
     });
   }
 
-  userAddress(address: any) {
-    let {
-      first_line,
-      second_line,
-      landmark,
-      city,
-      district,
-      state,
-      country,
-      pin_code,
-    } = address;
-    return `${first_line}, ${second_line}, ${landmark}, ${city}, ${district}, ${state}, ${country}, ${pin_code},`;
-  }
-
   constructor(
     private userService: UserService,
     private aRoute: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getUser(this.aRoute.snapshot.params.id);

@@ -47,6 +47,17 @@
       "country": "India",
       "pin_code": "440018",
       "id": "9528eaef-5263-4713-80a9-ed1f2713750a"
+    },
+    {
+      "first_line": "sssss",
+      "second_line": "ssss",
+      "landmark": "ssss",
+      "city": "nagpur",
+      "district": "sss",
+      "state": "maharashtra",
+      "country": "India",
+      "pin_code": "440018",
+      "id": "a445eb14-8f23-406e-9f1a-4bf6c111d088"
     }
   ]
 }
