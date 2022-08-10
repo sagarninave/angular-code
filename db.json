@@ -34,6 +34,17 @@
       "address": "9528eaef-5263-4713-80a9-ed1f2713750a",
       "id": "03e3dfa9-0729-492a-a849-ba554c129962",
       "role": "member"
+    },
+    {
+      "first_name": "dipak",
+      "last_name": "hedaoo",
+      "email": "dipak@yopmail.cpm",
+      "mobile": "0965744520",
+      "date_of_birth": "1996-01-11",
+      "gender": "male",
+      "address": "1f8c6a29-8c12-47fe-87eb-93b8c72cc795",
+      "id": "02292585-ae8f-477b-a123-3364186d92f1",
+      "role": "member"
     }
   ],
   "user_address": [
@@ -58,6 +69,28 @@
       "country": "India",
       "pin_code": "440018",
       "id": "a445eb14-8f23-406e-9f1a-4bf6c111d088"
+    },
+    {
+      "first_line": "Z",
+      "second_line": "z",
+      "landmark": "zxz",
+      "city": "nagpur",
+      "district": "zx",
+      "state": "maharashtra",
+      "country": "India",
+      "pin_code": "440018",
+      "id": "7445bbc7-74e1-48b9-b43b-3917ae6f692b"
+    },
+    {
+      "first_line": "tim ki",
+      "second_line": "nakaloba temple",
+      "landmark": "timki",
+      "city": "nagpur",
+      "district": "nagpur",
+      "state": "maharashtra",
+      "country": "India",
+      "pin_code": "440018",
+      "id": "1f8c6a29-8c12-47fe-87eb-93b8c72cc795"
     }
   ]
 }

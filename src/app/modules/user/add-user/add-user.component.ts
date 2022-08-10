@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChange } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { AuthService } from "src/app/service/auth.service";
 import { v4 } from "uuid";
@@ -14,7 +14,11 @@ export class AddUserComponent implements OnInit {
   addUserForm: FormGroup;
   isSubmitted: boolean = false;
 
+  @Input() isEditUser;
+  @Input() editUserData;
   @Output() refresh = new EventEmitter<any>();
+  @Output() onCloseAddEditPopup = new EventEmitter<boolean>();
+
 
   constructor(
     private FB: FormBuilder,
@@ -25,6 +29,8 @@ export class AddUserComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
+    this.addUserForm.patchValue(this.editUserData);
+    console.log("editUserData : ", this.editUserData)
   }
 
   get f() {
@@ -118,5 +124,6 @@ export class AddUserComponent implements OnInit {
 
   onClose(): void {
     this.addUserForm.reset();
+    this.onCloseAddEditPopup.emit(false);
   }
 }

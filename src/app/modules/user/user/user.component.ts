@@ -10,6 +10,7 @@ import { ToastrService } from "ngx-toastr";
   styleUrls: ["./user.component.scss"],
 })
 export class UserComponent implements OnInit {
+  isOpen: boolean = false;
   users: IUser[] = [];
   search: string = "";
   isEditUser: boolean = false;
@@ -25,6 +26,10 @@ export class UserComponent implements OnInit {
     this.getUsersData();
   }
 
+  onOpen() {
+    this.isOpen = true;
+  }
+
   getUsersData(): void {
     this.userService.getUsers().subscribe((result) => {
       this.users = result.filter(user => user.role === "member");
@@ -36,11 +41,20 @@ export class UserComponent implements OnInit {
   }
 
   editUser(e, user): void {
-    console.log("editUser",user)
     e.stopPropagation();
     document.getElementById("addUserBtn").click();
     this.isEditUser = true;
-    this.editUser = user
+    let tempUser = user;
+    this.userService
+      .getUserAddress(user.address)
+      .subscribe((address_result) => {
+        let address = {};
+        for (let i of Object.keys(address_result)) {
+          address[i] = address_result[i];
+        }
+        tempUser.address = address;
+      });
+    this.editUserData = tempUser;
   }
 
   deleteUser(e, userId): void {
@@ -49,5 +63,9 @@ export class UserComponent implements OnInit {
       this.toastr.success("User delete successfully");
       this.getUsersData();
     })
+  }
+
+  onCloseAddEditPopup(value) {
+    this.isOpen = false;
   }
 }

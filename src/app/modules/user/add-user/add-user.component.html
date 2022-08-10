@@ -1,56 +1,189 @@
-<div
-  class="modal fade"
-  id="exampleModalCenter"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true"
-  (blur)="onClose()"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <form
-        class="mx-md-4 my-md-4"
-        [formGroup]="addUserForm"
-        (ngSubmit)="onSubmitAddUser()"
-      >
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Add User</h5>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-            id="close"
-            (click)="onClose()"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <form
+      class="mx-md-4 my-md-4"
+      [formGroup]="addUserForm"
+      (ngSubmit)="onSubmitAddUser()"
+    >
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" *ngIf="!isEditUser">
+          Add User
+        </h5>
+        <h5 class="modal-title" id="exampleModalLongTitle" *ngIf="isEditUser">
+          Edit User
+        </h5>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex flex-row align-items-center mb-4 gap">
+          <div class="form-outline flex-fill mb-0">
+            <input
+              type="text"
+              class="form-control"
+              [ngClass]="{
+                'is-invalid': isSubmitted && f.first_name.errors
+              }"
+              formControlName="first_name"
+              placeholder="First Name"
+            />
+            <p
+              *ngIf="isSubmitted && f.first_name.errors"
+              class="text-danger error mb-0"
+            >
+              <span *ngIf="f.first_name.errors.required">
+                First name is required.
+              </span>
+              <span *ngIf="f.first_name.errors.minlength">
+                Minimum 3 characters are allowed.
+              </span>
+              <span *ngIf="f.first_name.errors.maxlength">
+                Maximum 20 characters are allowed.
+              </span>
+            </p>
+          </div>
+
+          <div class="form-outline flex-fill mb-0">
+            <input
+              type="text"
+              class="form-control"
+              [ngClass]="{
+                'is-invalid': isSubmitted && f.last_name.errors
+              }"
+              formControlName="last_name"
+              placeholder="Last Name"
+            />
+            <p
+              *ngIf="isSubmitted && f.last_name.errors"
+              class="text-danger error mb-0"
+            >
+              <span *ngIf="f.last_name.errors.required">
+                Last name is required.
+              </span>
+              <span *ngIf="f.last_name.errors.minlength">
+                Minimum 3 characters are allowed.
+              </span>
+              <span *ngIf="f.last_name.errors.maxlength">
+                Maximum 20 characters are allowed.
+              </span>
+            </p>
+          </div>
         </div>
-        <div class="modal-body">
+
+        <div class="d-flex flex-row align-items-center mb-4 gap">
+          <div class="form-outline flex-fill mb-0">
+            <input
+              type="email"
+              class="form-control"
+              [ngClass]="{
+                'is-invalid': isSubmitted && f.email.errors
+              }"
+              formControlName="email"
+              placeholder="Email"
+            />
+            <p
+              *ngIf="isSubmitted && f.email.errors"
+              class="text-danger error mb-0"
+            >
+              <span *ngIf="f.email.errors.required"> Email is required. </span>
+              <span *ngIf="f.email.errors.email" class="d-block">
+                Email must be a valid email address
+              </span>
+              <span *ngIf="f.email.errors.minlength">
+                Minimum 8 characters are allowed.
+              </span>
+              <span *ngIf="f.email.errors.maxlength">
+                Maximum 50 characters are allowed.
+              </span>
+            </p>
+          </div>
+
+          <div class="form-outline flex-fill mb-0">
+            <input
+              type="text"
+              class="form-control"
+              [ngClass]="{
+                'is-invalid': isSubmitted && f.mobile.errors
+              }"
+              formControlName="mobile"
+              placeholder="Mobile"
+            />
+            <p
+              *ngIf="isSubmitted && f.mobile.errors"
+              class="text-danger error mb-0"
+            >
+              <span *ngIf="f.mobile.errors.required">
+                Mobile number is required.
+              </span>
+              <span *ngIf="f.mobile.errors.maxlength">
+                Maximum 10 characters are allowed.
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4 gap">
+          <div class="form-outline flex-fill mb-0">
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              formControlName="gender"
+              [ngClass]="{
+                'is-invalid': isSubmitted && f.gender.errors
+              }"
+            >
+              <option value="" disabled>Select Gender</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+            </select>
+            <p
+              *ngIf="isSubmitted && f.gender.errors"
+              class="text-danger error mb-0"
+            >
+              <span *ngIf="f.gender.errors.required">
+                Gender is required.
+              </span>
+            </p>
+          </div>
+
+          <div class="form-outline flex-fill mb-0">
+            <input
+              type="date"
+              class="form-control"
+              id="myColor"
+              formControlName="date_of_birth"
+              [ngClass]="{
+                'is-invalid': isSubmitted && f.date_of_birth.errors
+              }"
+            />
+            <p
+              *ngIf="isSubmitted && f.date_of_birth.errors"
+              class="text-danger error mb-0"
+            >
+              <span *ngIf="f.date_of_birth.errors.required">
+                Date of Birth is required.
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <ng-container formGroupName="address">
           <div class="d-flex flex-row align-items-center mb-4 gap">
             <div class="form-outline flex-fill mb-0">
               <input
                 type="text"
                 class="form-control"
                 [ngClass]="{
-                  'is-invalid': isSubmitted && f.first_name.errors
+                  'is-invalid':
+                    isSubmitted && f.address.controls.first_line.errors
                 }"
-                formControlName="first_name"
-                placeholder="First Name"
+                formControlName="first_line"
+                placeholder="First Line"
               />
               <p
-                *ngIf="isSubmitted && f.first_name.errors"
+                *ngIf="isSubmitted && f.address.controls.first_line.errors"
                 class="text-danger error mb-0"
               >
-                <span *ngIf="f.first_name.errors.required">
-                  First name is required.
-                </span>
-                <span *ngIf="f.first_name.errors.minlength">
-                  Minimum 3 characters are allowed.
-                </span>
-                <span *ngIf="f.first_name.errors.maxlength">
-                  Maximum 20 characters are allowed.
+                <span *ngIf="f.address.controls.first_line.errors.required">
+                  First Line is required.
                 </span>
               </p>
             </div>
@@ -60,23 +193,18 @@
                 type="text"
                 class="form-control"
                 [ngClass]="{
-                  'is-invalid': isSubmitted && f.last_name.errors
+                  'is-invalid':
+                    isSubmitted && f.address.controls.second_line.errors
                 }"
-                formControlName="last_name"
-                placeholder="Last Name"
+                formControlName="second_line"
+                placeholder="Second Line"
               />
               <p
-                *ngIf="isSubmitted && f.last_name.errors"
+                *ngIf="isSubmitted && f.address.controls.second_line.errors"
                 class="text-danger error mb-0"
               >
-                <span *ngIf="f.last_name.errors.required">
-                  Last name is required.
-                </span>
-                <span *ngIf="f.last_name.errors.minlength">
-                  Minimum 3 characters are allowed.
-                </span>
-                <span *ngIf="f.last_name.errors.maxlength">
-                  Maximum 20 characters are allowed.
+                <span *ngIf="f.address.controls.second_line.errors.required">
+                  Second Line is required.
                 </span>
               </p>
             </div>
@@ -85,29 +213,21 @@
           <div class="d-flex flex-row align-items-center mb-4 gap">
             <div class="form-outline flex-fill mb-0">
               <input
-                type="email"
+                type="text"
                 class="form-control"
                 [ngClass]="{
-                  'is-invalid': isSubmitted && f.email.errors
+                  'is-invalid':
+                    isSubmitted && f.address.controls.landmark.errors
                 }"
-                formControlName="email"
-                placeholder="Email"
+                formControlName="landmark"
+                placeholder="Landmark"
               />
               <p
-                *ngIf="isSubmitted && f.email.errors"
+                *ngIf="isSubmitted && f.address.controls.landmark.errors"
                 class="text-danger error mb-0"
               >
-                <span *ngIf="f.email.errors.required">
-                  Email is required.
-                </span>
-                <span *ngIf="f.email.errors.email" class="d-block">
-                  Email must be a valid email address
-                </span>
-                <span *ngIf="f.email.errors.minlength">
-                  Minimum 8 characters are allowed.
-                </span>
-                <span *ngIf="f.email.errors.maxlength">
-                  Maximum 50 characters are allowed.
+                <span *ngIf="f.address.controls.landmark.errors.required">
+                  Landmark is required.
                 </span>
               </p>
             </div>
@@ -117,20 +237,17 @@
                 type="text"
                 class="form-control"
                 [ngClass]="{
-                  'is-invalid': isSubmitted && f.mobile.errors
+                  'is-invalid': isSubmitted && f.address.controls.city.errors
                 }"
-                formControlName="mobile"
-                placeholder="Mobile"
+                formControlName="city"
+                placeholder="City"
               />
               <p
-                *ngIf="isSubmitted && f.mobile.errors"
+                *ngIf="isSubmitted && f.address.controls.city.errors"
                 class="text-danger error mb-0"
               >
-                <span *ngIf="f.mobile.errors.required">
-                  Mobile number is required.
-                </span>
-                <span *ngIf="f.mobile.errors.maxlength">
-                  Maximum 10 characters are allowed.
+                <span *ngIf="f.address.controls.city.errors.required">
+                  City is required.
                 </span>
               </p>
             </div>
@@ -138,232 +255,99 @@
 
           <div class="d-flex flex-row align-items-center mb-4 gap">
             <div class="form-outline flex-fill mb-0">
-              <select
-                class="form-select"
-                aria-label="Default select example"
-                formControlName="gender"
+              <input
+                type="text"
+                class="form-control"
                 [ngClass]="{
-                  'is-invalid': isSubmitted && f.gender.errors
+                  'is-invalid':
+                    isSubmitted && f.address.controls.district.errors
                 }"
-              >
-                <option value="" disabled>Select Gender</option>
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-              </select>
+                formControlName="district"
+                placeholder="District"
+              />
               <p
-                *ngIf="isSubmitted && f.gender.errors"
+                *ngIf="isSubmitted && f.address.controls.district.errors"
                 class="text-danger error mb-0"
               >
-                <span *ngIf="f.gender.errors.required">
-                  Gender is required.
+                <span *ngIf="f.address.controls.district.errors.required">
+                  District is required.
                 </span>
               </p>
             </div>
 
             <div class="form-outline flex-fill mb-0">
               <input
-                type="date"
+                type="text"
                 class="form-control"
-                id="myColor"
-                formControlName="date_of_birth"
                 [ngClass]="{
-                  'is-invalid': isSubmitted && f.date_of_birth.errors
+                  'is-invalid': isSubmitted && f.address.controls.state.errors
                 }"
+                formControlName="state"
+                placeholder="State"
               />
               <p
-                *ngIf="isSubmitted && f.date_of_birth.errors"
+                *ngIf="isSubmitted && f.address.controls.state.errors"
                 class="text-danger error mb-0"
               >
-                <span *ngIf="f.date_of_birth.errors.required">
-                  Date of Birth is required.
+                <span *ngIf="f.address.controls.state.errors.required">
+                  State is required.
                 </span>
               </p>
             </div>
           </div>
 
-          <ng-container formGroupName="address">
-            <div class="d-flex flex-row align-items-center mb-4 gap">
-              <div class="form-outline flex-fill mb-0">
-                <input
-                  type="text"
-                  class="form-control"
-                  [ngClass]="{
-                    'is-invalid':
-                      isSubmitted && f.address.controls.first_line.errors
-                  }"
-                  formControlName="first_line"
-                  placeholder="First Line"
-                />
-                <p
-                  *ngIf="isSubmitted && f.address.controls.first_line.errors"
-                  class="text-danger error mb-0"
-                >
-                  <span *ngIf="f.address.controls.first_line.errors.required">
-                    First Line is required.
-                  </span>
-                </p>
-              </div>
-
-              <div class="form-outline flex-fill mb-0">
-                <input
-                  type="text"
-                  class="form-control"
-                  [ngClass]="{
-                    'is-invalid':
-                      isSubmitted && f.address.controls.second_line.errors
-                  }"
-                  formControlName="second_line"
-                  placeholder="Second Line"
-                />
-                <p
-                  *ngIf="isSubmitted && f.address.controls.second_line.errors"
-                  class="text-danger error mb-0"
-                >
-                  <span *ngIf="f.address.controls.second_line.errors.required">
-                    Second Line is required.
-                  </span>
-                </p>
-              </div>
+          <div class="d-flex flex-row align-items-center mb-4 gap">
+            <div class="form-outline flex-fill mb-0">
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid': isSubmitted && f.address.controls.country.errors
+                }"
+                formControlName="country"
+                placeholder="Country"
+              />
+              <p
+                *ngIf="isSubmitted && f.address.controls.country.errors"
+                class="text-danger error mb-0"
+              >
+                <span *ngIf="f.address.controls.country.errors.required">
+                  Country is required.
+                </span>
+              </p>
             </div>
 
-            <div class="d-flex flex-row align-items-center mb-4 gap">
-              <div class="form-outline flex-fill mb-0">
-                <input
-                  type="text"
-                  class="form-control"
-                  [ngClass]="{
-                    'is-invalid':
-                      isSubmitted && f.address.controls.landmark.errors
-                  }"
-                  formControlName="landmark"
-                  placeholder="Landmark"
-                />
-                <p
-                  *ngIf="isSubmitted && f.address.controls.landmark.errors"
-                  class="text-danger error mb-0"
-                >
-                  <span *ngIf="f.address.controls.landmark.errors.required">
-                    Landmark is required.
-                  </span>
-                </p>
-              </div>
-
-              <div class="form-outline flex-fill mb-0">
-                <input
-                  type="text"
-                  class="form-control"
-                  [ngClass]="{
-                    'is-invalid': isSubmitted && f.address.controls.city.errors
-                  }"
-                  formControlName="city"
-                  placeholder="City"
-                />
-                <p
-                  *ngIf="isSubmitted && f.address.controls.city.errors"
-                  class="text-danger error mb-0"
-                >
-                  <span *ngIf="f.address.controls.city.errors.required">
-                    City is required.
-                  </span>
-                </p>
-              </div>
+            <div class="form-outline flex-fill mb-0">
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid':
+                    isSubmitted && f.address.controls.pin_code.errors
+                }"
+                formControlName="pin_code"
+                placeholder="Pin Code"
+              />
+              <p
+                *ngIf="isSubmitted && f.address.controls.pin_code.errors"
+                class="text-danger error mb-0"
+              >
+                <span *ngIf="f.address.controls.pin_code.errors.required">
+                  Pin Code is required.
+                </span>
+              </p>
             </div>
-
-            <div class="d-flex flex-row align-items-center mb-4 gap">
-              <div class="form-outline flex-fill mb-0">
-                <input
-                  type="text"
-                  class="form-control"
-                  [ngClass]="{
-                    'is-invalid':
-                      isSubmitted && f.address.controls.district.errors
-                  }"
-                  formControlName="district"
-                  placeholder="District"
-                />
-                <p
-                  *ngIf="isSubmitted && f.address.controls.district.errors"
-                  class="text-danger error mb-0"
-                >
-                  <span *ngIf="f.address.controls.district.errors.required">
-                    District is required.
-                  </span>
-                </p>
-              </div>
-
-              <div class="form-outline flex-fill mb-0">
-                <input
-                  type="text"
-                  class="form-control"
-                  [ngClass]="{
-                    'is-invalid': isSubmitted && f.address.controls.state.errors
-                  }"
-                  formControlName="state"
-                  placeholder="State"
-                />
-                <p
-                  *ngIf="isSubmitted && f.address.controls.state.errors"
-                  class="text-danger error mb-0"
-                >
-                  <span *ngIf="f.address.controls.state.errors.required">
-                    State is required.
-                  </span>
-                </p>
-              </div>
-            </div>
-
-            <div class="d-flex flex-row align-items-center mb-4 gap">
-              <div class="form-outline flex-fill mb-0">
-                <input
-                  type="text"
-                  class="form-control"
-                  [ngClass]="{
-                    'is-invalid':
-                      isSubmitted && f.address.controls.country.errors
-                  }"
-                  formControlName="country"
-                  placeholder="Country"
-                />
-                <p
-                  *ngIf="isSubmitted && f.address.controls.country.errors"
-                  class="text-danger error mb-0"
-                >
-                  <span *ngIf="f.address.controls.country.errors.required">
-                    Country is required.
-                  </span>
-                </p>
-              </div>
-
-              <div class="form-outline flex-fill mb-0">
-                <input
-                  type="text"
-                  class="form-control"
-                  [ngClass]="{
-                    'is-invalid':
-                      isSubmitted && f.address.controls.pin_code.errors
-                  }"
-                  formControlName="pin_code"
-                  placeholder="Pin Code"
-                />
-                <p
-                  *ngIf="isSubmitted && f.address.controls.pin_code.errors"
-                  class="text-danger error mb-0"
-                >
-                  <span *ngIf="f.address.controls.pin_code.errors.required">
-                    Pin Code is required.
-                  </span>
-                </p>
-              </div>
-            </div>
-          </ng-container>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
-            Close
-          </button>
-          <button type="submit" class="btn btn-primary">Add</button>
-        </div>
-      </form>
-    </div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="onClose()">
+          Close
+        </button>
+        <button type="submit" class="btn btn-primary">
+          {{ isEditUser ? "Edit" : "Add" }}
+        </button>
+      </div>
+    </form>
   </div>
 </div>
