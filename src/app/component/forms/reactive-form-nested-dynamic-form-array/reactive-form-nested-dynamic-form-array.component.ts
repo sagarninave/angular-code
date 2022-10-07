@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form-nested-dynamic-form-array',
@@ -10,19 +10,72 @@ export class ReactiveFormNestedDynamicFormArrayComponent implements OnInit {
 
   public userForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder) { }
+
+  ngOnInit() {
+    const data = [
+      {
+        shift_start: "shift start 1",
+        shift_end: "shift end 1",
+        break: [
+          {
+            break_start: "break start 1.1",
+            break_end: "breakend 1.1",
+          },
+          {
+            break_start: "break start 1.2",
+            break_end: "breakend 1.2",
+          },
+          {
+            break_start: "break start 1.3",
+            break_end: "breakend 1.3",
+          }
+        ]
+      },
+      {
+        shift_start: "shift start 2",
+        shift_end: "shift end 2",
+        break: [
+          {
+            break_start: "break start 2.1",
+            break_end: "breakend 2.1",
+          },
+          {
+            break_start: "break start 2.2",
+            break_end: "breakend 2.2",
+          },
+          {
+            break_start: "break start 2.3",
+            break_end: "breakend 2.3",
+          }
+        ]
+      }
+    ]
+
     this.userForm = this.fb.group({
-      shift: this.fb.array([this.onAddShift()])
+      shift: this.fb.array(data.map(item => this.populateShiftData(item)))
     });
   }
 
-  ngOnInit() {
+  populateShiftData(item) {
+    return this.fb.group({
+      shift_start: this.fb.control(item.shift_start),
+      shift_end: this.fb.control(item.shift_end),
+      break: this.fb.array(item.break.map(item => this.populateBreakData(item)))
+    });
+  }
+
+  populateBreakData(item) {
+    return this.fb.group({
+      break_start: this.fb.control(item.break_start),
+      break_end: this.fb.control(item.break_end)
+    });
   }
 
   onAddShift(): FormGroup {
     return this.fb.group({
-      shift_start: [],
-      shift_end: [],
+      shift_start: [""],
+      shift_end: [""],
       break: this.fb.array([])
     });
   }
@@ -34,6 +87,10 @@ export class ReactiveFormNestedDynamicFormArrayComponent implements OnInit {
   removeShift(index: number): void {
     this.shiftArray.removeAt(index);
   }
+
+  // removeBreak(index1: number, index2: number): void {
+  //   this.userForm[index1].removeAt(index2);
+  // }
 
   get shiftArray(): FormArray {
     return <FormArray>this.userForm.get('shift');
