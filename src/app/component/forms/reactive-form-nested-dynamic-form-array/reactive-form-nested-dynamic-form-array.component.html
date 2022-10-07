@@ -1,0 +1,36 @@
+<h3>Users Creation</h3>
+<div class="float-right">
+  <button type="button" class="btn btn-light btn-sm mt-2 mb-2" (click)="addShift()">Add Shift</button>
+  <button type="button" class="btn btn-primary btn-sm mt-2 mb-2 ml-2" (click)="onSubmit()">Save</button>
+</div>
+<form class="example-form" [formGroup]="userForm">
+  <div class="address-container" *ngFor="let group of shiftArray.controls; let i = index;" formArrayName="shift">
+    <div class="row" [formGroupName]='i'>
+
+      <div class="col-4">
+        <input class="form-control" placeholder="Shift Start" value="" formControlName="shift_start">
+      </div>
+
+      <div class="col-4">
+        <input class="form-control" placeholder="Shift End" value="" formControlName="shift_end">
+      </div>
+
+      <div class="col-4">
+        <button type="button" class="btn btn-danger btn-sm mt-2 mb-2 ml-2" (click)="removeShift(i)">Remove</button>
+      </div>
+
+      <div formArrayName='break'>
+        <div class="row mt-2 mb-2" *ngFor="let subgroup of group.controls.break.controls; let idx = index;"
+          [formGroupName]="idx">
+          <div class="col-4">
+            <input class="form-control" placeholder="Break Start" value="" formControlName="break_start">
+          </div>
+          <div class="col-4">
+            <input class="form-control" placeholder="Break End" value="" formControlName="break_end">
+          </div>
+        </div>
+        <button type="button" class="btn btn-light btn-sm mt-2 mb-2" (click)="addBreak(i)">Add Break</button>
+      </div>
+    </div>
+  </div>
+</form>

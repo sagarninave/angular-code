@@ -45,6 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './Guard/auth.guard';
 import { UnauthorizedComponent } from './shared/unauthorized/unauthorized.component';
 import { CheckGuard } from './Guard/check.guard';
+import { ReactiveFormNestedDynamicFormArrayComponent } from './component/forms/reactive-form-nested-dynamic-form-array/reactive-form-nested-dynamic-form-array.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { CheckGuard } from './Guard/check.guard';
     LifeCycleComponent,
     LifeCycleChildComponent,
     UnauthorizedComponent,
+    ReactiveFormNestedDynamicFormArrayComponent,
   ],
   imports: [
     BrowserModule,

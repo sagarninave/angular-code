@@ -24,6 +24,7 @@ import { TemplateDrivenFormTwoWayBindingValidationComponent } from "./component/
 import { LifeCycleComponent } from "./component/life-cycle/life-cycle.component";
 import { AuthGuard } from "src/app/Guard/auth.guard";
 import { CheckGuard } from "./Guard/check.guard";
+import { ReactiveFormNestedDynamicFormArrayComponent } from "./component/forms/reactive-form-nested-dynamic-form-array/reactive-form-nested-dynamic-form-array.component";
 
 const route: Routes = [
   { path: "", redirectTo: "binding", pathMatch: "full" },
@@ -77,6 +78,10 @@ const route: Routes = [
       {
         path: "template-driven-form-two-way-binding-validation",
         component: TemplateDrivenFormTwoWayBindingValidationComponent,
+      },
+      {
+        path: "reactive-form-nested-dynamic-form-array-component",
+        component: ReactiveFormNestedDynamicFormArrayComponent,
       },
     ],
   },
